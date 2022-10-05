@@ -1,0 +1,29 @@
+// p_3-1
+digraph "p_3-1" {
+	root [label="root 
+ [split attribute: skip_everything]"]
+	"skip_everything = False" [label="skip_everything = False 
+ [split attribute: amount]"]
+	root -> "skip_everything = False"
+	"amount <= 398.2698426478454" [label="amount <= 398.2698426478454 
+ [Classes]: 
+ - skip_2: 15.0 
+ - trans_C: 8.0"]
+	"skip_everything = False" -> "amount <= 398.2698426478454"
+	"amount > 398.2698426478454" [label="amount > 398.2698426478454 
+ [Classes]: 
+ - trans_C: 46.0"]
+	"skip_everything = False" -> "amount > 398.2698426478454"
+	"skip_everything = True" [label="skip_everything = True 
+ [split attribute: amount]"]
+	root -> "skip_everything = True"
+	"amount <= 987.2944770624449" [label="amount <= 987.2944770624449 
+ [Classes]: 
+ - skip_2: 40.0 
+ - trans_C: 23.0"]
+	"skip_everything = True" -> "amount <= 987.2944770624449"
+	"amount > 987.2944770624449" [label="amount > 987.2944770624449 
+ [Classes]: 
+ - trans_C: 2.0"]
+	"skip_everything = True" -> "amount > 987.2944770624449"
+}

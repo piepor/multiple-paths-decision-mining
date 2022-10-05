@@ -1,0 +1,13 @@
+// p_1-1
+digraph "p_1-1" {
+	root [label="root 
+ [split attribute: is_present]"]
+	"is_present = False" [label="is_present = False 
+ [Classes]: 
+ - trans_B: 60.0"]
+	root -> "is_present = False"
+	"is_present = True" [label="is_present = True 
+ [Classes]: 
+ - skip_1: 47.0"]
+	root -> "is_present = True"
+}
