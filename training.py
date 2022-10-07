@@ -28,7 +28,7 @@ def sampling_dataset(dataset: pd.DataFrame) -> pd.DataFrame:
 
     return dataset
 
-def train(training_data: dict, attributes_map: dict, n_sample: int=10):
+def train(training_data: dict, attributes_map: dict, net_name: str, n_sample: int=10):
     #file_name = 'test.txt'
     for decision_point in training_data.keys():
         #if decision_point == 'p_3':
@@ -43,13 +43,13 @@ def train(training_data: dict, attributes_map: dict, n_sample: int=10):
         accuracies, f_scores = list(), list()
         for i in tqdm(range(n_sample)):
             # Sampling
-            #dataset = sampling_dataset(complete_dataset)
-            dataset = complete_dataset.copy()
+            dataset = sampling_dataset(complete_dataset)
+            #dataset = complete_dataset.copy()
 
             # Fitting
-            dt = DecisionTreeClassifier(attributes_map.copy())
+            dt = DecisionTreeClassifier(attributes_map.copy(), min_instances=20)
             dt.fit(dataset)
-            dt.view(title=f"{decision_point}-{i+1}")
+            dt.view(title=f"{net_name}-{decision_point}-{i+1}", view=False)
 
             # Predict
             y_pred = dt.predict(dataset.drop(columns=['target']))
@@ -66,8 +66,8 @@ def train(training_data: dict, attributes_map: dict, n_sample: int=10):
             f_scores.append(f1_score)
             # get rules
             rules = dt.get_rules('standard')
-            for rule in rules:
-                print(f"{rule}: \n {rules[rule]}")
+#            for rule in rules:
+#                print(f"{rule}: \n {rules[rule]}")
         print("Train accuracy: {}".format(sum(accuracies) / len(accuracies)))
         print("F1 score: {}".format(sum(f_scores) / len(f_scores)))
 
