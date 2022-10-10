@@ -1,0 +1,15 @@
+// Road_Traffic_Fine_Management_Process-p_15-7
+digraph "Road_Traffic_Fine_Management_Process-p_15-7" {
+	"bae13969-7628-4c7c-8543-d7aaacdade40" [label="root 
+ [split attribute: totalPaymentAmount]"]
+	"c974b600-57ab-4434-9b78-a29f513606a4" [label="totalPaymentAmount <= 18.0 
+ [Classes]: 
+ - skip_11: 20538.0 
+ - tauSplit_3: 45235.0"]
+	"bae13969-7628-4c7c-8543-d7aaacdade40" -> "c974b600-57ab-4434-9b78-a29f513606a4"
+	"94c37763-1f57-442f-ae67-c2241a735bf2" [label="totalPaymentAmount > 18.0 
+ [Classes]: 
+ - skip_11: 49972.0 
+ - tauSplit_3: 25275.0"]
+	"bae13969-7628-4c7c-8543-d7aaacdade40" -> "94c37763-1f57-442f-ae67-c2241a735bf2"
+}

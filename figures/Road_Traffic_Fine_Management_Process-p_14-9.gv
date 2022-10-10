@@ -1,0 +1,47 @@
+// Road_Traffic_Fine_Management_Process-p_14-9
+digraph "Road_Traffic_Fine_Management_Process-p_14-9" {
+	"50e164ec-898c-4347-9296-b38898cfb632" [label="root 
+ [split attribute: dismissal]"]
+	"421d3bc0-9083-408d-bb2f-427077f5aed8" [label="dismissal = # 
+ [split attribute: paymentAmount]"]
+	"50e164ec-898c-4347-9296-b38898cfb632" -> "421d3bc0-9083-408d-bb2f-427077f5aed8"
+	"2fb4a053-02ea-4d6b-8cb6-bb42a5e83c2c" [label="paymentAmount <= 85.75 
+ [Classes]: 
+ - skip_10: 62.1658 
+ - trans_H: 37.698"]
+	"421d3bc0-9083-408d-bb2f-427077f5aed8" -> "2fb4a053-02ea-4d6b-8cb6-bb42a5e83c2c"
+	"ab884885-f764-4618-b0c0-af5671d3943e" [label="paymentAmount > 85.75 
+ [split attribute: totalPaymentAmount]"]
+	"421d3bc0-9083-408d-bb2f-427077f5aed8" -> "ab884885-f764-4618-b0c0-af5671d3943e"
+	"a8a951fd-a62a-48ef-a864-22caf302f642" [label="totalPaymentAmount <= 141.0 
+ [Classes]: 
+ - skip_10: 4.2679 
+ - trans_H: 2.6839"]
+	"ab884885-f764-4618-b0c0-af5671d3943e" -> "a8a951fd-a62a-48ef-a864-22caf302f642"
+	"58eac409-c263-4058-ac52-de07f541749d" [label="totalPaymentAmount > 141.0 
+ [Classes]: 
+ - skip_10: 1.7871 
+ - trans_H: 1.1779"]
+	"ab884885-f764-4618-b0c0-af5671d3943e" -> "58eac409-c263-4058-ac52-de07f541749d"
+	"4cba3080-d163-464c-bb2f-52d47e9eac9f" [label="dismissal = NIL 
+ [split attribute: paymentAmount]"]
+	"50e164ec-898c-4347-9296-b38898cfb632" -> "4cba3080-d163-464c-bb2f-52d47e9eac9f"
+	"4c3c40a8-260a-45cb-87cd-f79a11273a1d" [label="paymentAmount <= 85.75 
+ [Classes]: 
+ - skip_10: 848.6785 
+ - trans_H: 869.4723"]
+	"4cba3080-d163-464c-bb2f-52d47e9eac9f" -> "4c3c40a8-260a-45cb-87cd-f79a11273a1d"
+	"0dbf0f87-29fc-4884-970d-847aa0e8762a" [label="paymentAmount > 85.75 
+ [split attribute: totalPaymentAmount]"]
+	"4cba3080-d163-464c-bb2f-52d47e9eac9f" -> "0dbf0f87-29fc-4884-970d-847aa0e8762a"
+	"a6d71f10-7b66-4eff-965b-d0a61948e4fb" [label="totalPaymentAmount <= 141.0 
+ [Classes]: 
+ - skip_10: 57.9745 
+ - trans_H: 61.3265"]
+	"0dbf0f87-29fc-4884-970d-847aa0e8762a" -> "a6d71f10-7b66-4eff-965b-d0a61948e4fb"
+	"846ec8a6-9904-46f6-91f2-548a7e812a58" [label="totalPaymentAmount > 141.0 
+ [Classes]: 
+ - skip_10: 24.1262 
+ - trans_H: 26.6414"]
+	"0dbf0f87-29fc-4884-970d-847aa0e8762a" -> "846ec8a6-9904-46f6-91f2-548a7e812a58"
+}

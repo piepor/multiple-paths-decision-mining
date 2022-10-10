@@ -1,0 +1,803 @@
+// Road_Traffic_Fine_Management_Process-p_3-9
+digraph "Road_Traffic_Fine_Management_Process-p_3-9" {
+	"96a13430-f5ae-4959-bd77-31f81c4ffca9" [label="root 
+ [split attribute: lastSent]"]
+	"30b86277-0cc7-4bad-a4ec-42d42cc6a54a" [label="lastSent = C 
+ [split attribute: expense]"]
+	"96a13430-f5ae-4959-bd77-31f81c4ffca9" -> "30b86277-0cc7-4bad-a4ec-42d42cc6a54a"
+	"6c22e776-66e8-4a7d-933d-f192f4972490" [label="expense <= 0.0 
+ [Classes]: 
+ - skip_3: 142.1913 
+ - skip_4: 86.6692"]
+	"30b86277-0cc7-4bad-a4ec-42d42cc6a54a" -> "6c22e776-66e8-4a7d-933d-f192f4972490"
+	"f11799ec-08df-45d5-afe4-59e55873826e" [label="expense > 0.0 
+ [split attribute: expense]"]
+	"30b86277-0cc7-4bad-a4ec-42d42cc6a54a" -> "f11799ec-08df-45d5-afe4-59e55873826e"
+	"0f32f32d-e3d5-476a-81ac-bbba1893b867" [label="expense <= 10.0 
+ [split attribute: amount]"]
+	"f11799ec-08df-45d5-afe4-59e55873826e" -> "0f32f32d-e3d5-476a-81ac-bbba1893b867"
+	"717b2988-a2c2-43d1-9a97-594c6e81834d" [label="amount <= 33.6 
+ [split attribute: amount]"]
+	"0f32f32d-e3d5-476a-81ac-bbba1893b867" -> "717b2988-a2c2-43d1-9a97-594c6e81834d"
+	"13c0995c-1a92-4366-9150-e59bbc29e188" [label="amount <= 31.3 
+ [split attribute: amount]"]
+	"717b2988-a2c2-43d1-9a97-594c6e81834d" -> "13c0995c-1a92-4366-9150-e59bbc29e188"
+	"849fcd52-d93b-4e85-9387-96705aede353" [label="amount <= 19.95 
+ [split attribute: amount]"]
+	"13c0995c-1a92-4366-9150-e59bbc29e188" -> "849fcd52-d93b-4e85-9387-96705aede353"
+	"14c0524b-25c2-447a-8b9b-c4b8f29355b3" [label="amount <= 18.78 
+ [Classes]: 
+ - skip_3: 0.3755 
+ - skip_4: 0.7648"]
+	"849fcd52-d93b-4e85-9387-96705aede353" -> "14c0524b-25c2-447a-8b9b-c4b8f29355b3"
+	"28400bc7-c539-4f63-a340-c5525c036439" [label="amount > 18.78 
+ [split attribute: amount]"]
+	"849fcd52-d93b-4e85-9387-96705aede353" -> "28400bc7-c539-4f63-a340-c5525c036439"
+	"d48a7bff-1914-4203-b35a-455b197bbf2e" [label="amount <= 19.68 
+ [split attribute: expense]"]
+	"28400bc7-c539-4f63-a340-c5525c036439" -> "d48a7bff-1914-4203-b35a-455b197bbf2e"
+	"669ff812-b149-438b-812a-b39e87933a24" [label="expense <= 6.71 
+ [Classes]: 
+ - skip_3: 0.4843 
+ - skip_4: 2.7963"]
+	"d48a7bff-1914-4203-b35a-455b197bbf2e" -> "669ff812-b149-438b-812a-b39e87933a24"
+	"18c6dc1d-5cad-49d8-b87b-de15fb044170" [label="expense > 6.71 
+ [split attribute: amount]"]
+	"d48a7bff-1914-4203-b35a-455b197bbf2e" -> "18c6dc1d-5cad-49d8-b87b-de15fb044170"
+	"e76f5308-ce03-4bcc-a40e-1c8c2b75050d" [label="amount <= 19.0 
+ [Classes]: 
+ - skip_3: 0.5343 
+ - skip_4: 2.7246"]
+	"18c6dc1d-5cad-49d8-b87b-de15fb044170" -> "e76f5308-ce03-4bcc-a40e-1c8c2b75050d"
+	"13e13814-6692-487c-9f3b-e0f143df6900" [label="amount > 19.0 
+ [Classes]: 
+ - skip_3: 0.0964 
+ - skip_4: 0.0478"]
+	"18c6dc1d-5cad-49d8-b87b-de15fb044170" -> "13e13814-6692-487c-9f3b-e0f143df6900"
+	"b9407aa3-6ff4-4fc7-947f-579a83a14ebb" [label="amount > 19.68 
+ [Classes]: 
+ - skip_3: 0.1026 
+ - skip_4: 0.9082"]
+	"28400bc7-c539-4f63-a340-c5525c036439" -> "b9407aa3-6ff4-4fc7-947f-579a83a14ebb"
+	"2b87e7a2-0bf5-4e13-90b5-b24357e8f817" [label="amount > 19.95 
+ [split attribute: amount]"]
+	"13c0995c-1a92-4366-9150-e59bbc29e188" -> "2b87e7a2-0bf5-4e13-90b5-b24357e8f817"
+	"3ac6ac03-335c-4a45-b779-89b8bbbd1696" [label="amount <= 25.0 
+ [Classes]: 
+ - skip_3: 5.292 
+ - skip_4: 0.0717"]
+	"2b87e7a2-0bf5-4e13-90b5-b24357e8f817" -> "3ac6ac03-335c-4a45-b779-89b8bbbd1696"
+	"267bd356-b06c-4060-93bc-4ce5fc4db071" [label="amount > 25.0 
+ [split attribute: expense]"]
+	"2b87e7a2-0bf5-4e13-90b5-b24357e8f817" -> "267bd356-b06c-4060-93bc-4ce5fc4db071"
+	"dcc648f3-b795-4d9e-92a9-4e27ac227dde" [label="expense <= 6.46 
+ [Classes]: 
+ - skip_3: 4.7942 
+ - skip_4: 4.5649"]
+	"267bd356-b06c-4060-93bc-4ce5fc4db071" -> "dcc648f3-b795-4d9e-92a9-4e27ac227dde"
+	"95544404-1d89-4395-a180-b166d0bdb9ec" [label="expense > 6.46 
+ [Classes]: 
+ - skip_3: 2.496 
+ - skip_4: 1.7686"]
+	"267bd356-b06c-4060-93bc-4ce5fc4db071" -> "95544404-1d89-4395-a180-b166d0bdb9ec"
+	"e1665bde-fcc2-4134-9a03-811d54f8484e" [label="amount > 31.3 
+ [split attribute: amount]"]
+	"717b2988-a2c2-43d1-9a97-594c6e81834d" -> "e1665bde-fcc2-4134-9a03-811d54f8484e"
+	"27921ba3-9e3a-444f-b07e-12f48fd75d85" [label="amount <= 32.8 
+ [split attribute: amount]"]
+	"e1665bde-fcc2-4134-9a03-811d54f8484e" -> "27921ba3-9e3a-444f-b07e-12f48fd75d85"
+	"8ac85e42-1a05-4c8d-b94f-adf6fc8254fc" [label="amount <= 32.0 
+ [Classes]: 
+ - skip_3: 11.4079 
+ - skip_4: 37.4752"]
+	"27921ba3-9e3a-444f-b07e-12f48fd75d85" -> "8ac85e42-1a05-4c8d-b94f-adf6fc8254fc"
+	"1fa31e68-96c4-4725-bdca-37773f5caca1" [label="amount > 32.0 
+ [Classes]: 
+ - skip_3: 8.7307 
+ - skip_4: 15.3438"]
+	"27921ba3-9e3a-444f-b07e-12f48fd75d85" -> "1fa31e68-96c4-4725-bdca-37773f5caca1"
+	"308dc851-4c2d-4244-b514-0234f9162e7c" [label="amount > 32.8 
+ [Classes]: 
+ - skip_3: 11.053 
+ - skip_4: 10.9223"]
+	"e1665bde-fcc2-4134-9a03-811d54f8484e" -> "308dc851-4c2d-4244-b514-0234f9162e7c"
+	"849e6ba9-d086-400f-a112-48b27af2bf81" [label="amount > 33.6 
+ [Classes]: 
+ - skip_3: 60.8839 
+ - skip_4: 20.7691"]
+	"0f32f32d-e3d5-476a-81ac-bbba1893b867" -> "849e6ba9-d086-400f-a112-48b27af2bf81"
+	"13a24ae3-8fda-432a-8b40-06e730cf4d78" [label="expense > 10.0 
+ [split attribute: expense]"]
+	"f11799ec-08df-45d5-afe4-59e55873826e" -> "13a24ae3-8fda-432a-8b40-06e730cf4d78"
+	"9e05fa76-01fc-4fd0-8768-dd0087da528c" [label="expense <= 21.95 
+ [split attribute: points]"]
+	"13a24ae3-8fda-432a-8b40-06e730cf4d78" -> "9e05fa76-01fc-4fd0-8768-dd0087da528c"
+	"e9e2d02b-c5a3-484c-8936-005b49ba3e94" [label="points <= 1.0 
+ [split attribute: amount]"]
+	"9e05fa76-01fc-4fd0-8768-dd0087da528c" -> "e9e2d02b-c5a3-484c-8936-005b49ba3e94"
+	"1f013f18-173e-4308-a202-3d0be32ba32c" [label="amount <= 328.0 
+ [split attribute: amount]"]
+	"e9e2d02b-c5a3-484c-8936-005b49ba3e94" -> "1f013f18-173e-4308-a202-3d0be32ba32c"
+	"13660975-b0a3-42b1-828b-2d6e939ce88f" [label="amount <= 21.0 
+ [split attribute: amount]"]
+	"1f013f18-173e-4308-a202-3d0be32ba32c" -> "13660975-b0a3-42b1-828b-2d6e939ce88f"
+	"3b959a12-2d23-4a14-858e-e55f45735e50" [label="amount <= 19.68 
+ [split attribute: amount]"]
+	"13660975-b0a3-42b1-828b-2d6e939ce88f" -> "3b959a12-2d23-4a14-858e-e55f45735e50"
+	"bf6e5b84-9ac2-4ddf-af85-32bed8d4faa3" [label="amount <= 18.78 
+ [Classes]: 
+ - skip_3: 0.259 
+ - skip_4: 0.6692"]
+	"3b959a12-2d23-4a14-858e-e55f45735e50" -> "bf6e5b84-9ac2-4ddf-af85-32bed8d4faa3"
+	"76ecf78c-6b73-4859-984e-e5e444385030" [label="amount > 18.78 
+ [Classes]: 
+ - skip_3: 0.6953 
+ - skip_4: 0.1912"]
+	"3b959a12-2d23-4a14-858e-e55f45735e50" -> "76ecf78c-6b73-4859-984e-e5e444385030"
+	"7ff8954e-7902-4720-a04e-96a7cc9ac048" [label="amount > 19.68 
+ [split attribute: amount]"]
+	"13660975-b0a3-42b1-828b-2d6e939ce88f" -> "7ff8954e-7902-4720-a04e-96a7cc9ac048"
+	"24da5f6c-bd4c-4030-adf2-9172911cb8b4" [label="amount <= 19.95 
+ [Classes]: 
+ - skip_3: 0.3344 
+ - skip_4: 4.4693"]
+	"7ff8954e-7902-4720-a04e-96a7cc9ac048" -> "24da5f6c-bd4c-4030-adf2-9172911cb8b4"
+	"52f71d59-387d-479b-9dac-de15762e6ae9" [label="amount > 19.95 
+ [split attribute: expense]"]
+	"7ff8954e-7902-4720-a04e-96a7cc9ac048" -> "52f71d59-387d-479b-9dac-de15762e6ae9"
+	"36a3f05a-24b7-40c1-99d5-17a0f09d8b7b" [label="expense <= 11.88 
+ [Classes]: 
+ - skip_3: 2.8101 
+ - skip_4: 9.799"]
+	"52f71d59-387d-479b-9dac-de15762e6ae9" -> "36a3f05a-24b7-40c1-99d5-17a0f09d8b7b"
+	"7aeb27b6-de03-412e-8d50-66f41da2c859" [label="expense > 11.88 
+ [Classes]: 
+ - skip_3: 0.1706 
+ - skip_4: 0.478"]
+	"52f71d59-387d-479b-9dac-de15762e6ae9" -> "7aeb27b6-de03-412e-8d50-66f41da2c859"
+	"705f6446-65c7-4d83-ab6b-2fed259d37b2" [label="amount > 21.0 
+ [split attribute: amount]"]
+	"1f013f18-173e-4308-a202-3d0be32ba32c" -> "705f6446-65c7-4d83-ab6b-2fed259d37b2"
+	"4869b9fc-62d5-4320-990c-51cb9866c43d" [label="amount <= 32.8 
+ [split attribute: amount]"]
+	"705f6446-65c7-4d83-ab6b-2fed259d37b2" -> "4869b9fc-62d5-4320-990c-51cb9866c43d"
+	"c069d04b-96f8-4940-a4f2-66e20ad45f8e" [label="amount <= 25.0 
+ [split attribute: amount]"]
+	"4869b9fc-62d5-4320-990c-51cb9866c43d" -> "c069d04b-96f8-4940-a4f2-66e20ad45f8e"
+	"2979f547-c5a9-4ccf-b98c-4bd8143f9767" [label="amount <= 24.0 
+ [Classes]: 
+ - skip_3: 13.6465 
+ - skip_4: 28.8951"]
+	"c069d04b-96f8-4940-a4f2-66e20ad45f8e" -> "2979f547-c5a9-4ccf-b98c-4bd8143f9767"
+	"4c490f8c-9203-490c-878f-398c98f298f9" [label="amount > 24.0 
+ [Classes]: 
+ - skip_3: 1.2107 
+ - skip_4: 6.5247"]
+	"c069d04b-96f8-4940-a4f2-66e20ad45f8e" -> "4c490f8c-9203-490c-878f-398c98f298f9"
+	"845a8bef-6924-406a-a232-baaf95ae505d" [label="amount > 25.0 
+ [Classes]: 
+ - skip_3: 43.6751 
+ - skip_4: 4.5171"]
+	"4869b9fc-62d5-4320-990c-51cb9866c43d" -> "845a8bef-6924-406a-a232-baaf95ae505d"
+	"13fa74cf-5a20-41e9-88b5-7acf123c8002" [label="amount > 32.8 
+ [split attribute: expense]"]
+	"705f6446-65c7-4d83-ab6b-2fed259d37b2" -> "13fa74cf-5a20-41e9-88b5-7acf123c8002"
+	"473b0b67-3ce8-4c13-bd55-32304fe9050d" [label="expense <= 16.0 
+ [split attribute: amount]"]
+	"13fa74cf-5a20-41e9-88b5-7acf123c8002" -> "473b0b67-3ce8-4c13-bd55-32304fe9050d"
+	"012dfbf2-5e7a-4fcd-ac9e-19f500c565c2" [label="amount <= 81.9 
+ [Classes]: 
+ - skip_3: 214.2176 
+ - skip_4: 294.6631"]
+	"473b0b67-3ce8-4c13-bd55-32304fe9050d" -> "012dfbf2-5e7a-4fcd-ac9e-19f500c565c2"
+	"06767e35-2be7-490f-ace0-863e46f5fcbf" [label="amount > 81.9 
+ [Classes]: 
+ - skip_3: 1.7567 
+ - skip_4: 5.8794"]
+	"473b0b67-3ce8-4c13-bd55-32304fe9050d" -> "06767e35-2be7-490f-ace0-863e46f5fcbf"
+	"320128b1-32ec-422c-b890-8be03015d0a1" [label="expense > 16.0 
+ [Classes]: 
+ - skip_3: 11.4021 
+ - skip_4: 13.9337"]
+	"13fa74cf-5a20-41e9-88b5-7acf123c8002" -> "320128b1-32ec-422c-b890-8be03015d0a1"
+	"4230d7c1-ecd9-4b67-9343-6bb7e6448ef4" [label="amount > 328.0 
+ [Classes]: 
+ - skip_3: 0.0654 
+ - skip_4: 3.2982"]
+	"e9e2d02b-c5a3-484c-8936-005b49ba3e94" -> "4230d7c1-ecd9-4b67-9343-6bb7e6448ef4"
+	"a31e4711-f46e-4233-ab4f-9c2e3a279020" [label="points > 1.0 
+ [Classes]: 
+ - skip_3: 0.1006 
+ - skip_4: 8.0505"]
+	"9e05fa76-01fc-4fd0-8768-dd0087da528c" -> "a31e4711-f46e-4233-ab4f-9c2e3a279020"
+	"a034d8eb-7502-4738-8436-74dbf5ddec3e" [label="expense > 21.95 
+ [Classes]: 
+ - skip_3: 12.7851 
+ - skip_4: 18.5752"]
+	"13a24ae3-8fda-432a-8b40-06e730cf4d78" -> "a034d8eb-7502-4738-8436-74dbf5ddec3e"
+	"bf0b4b5d-fbf8-48ec-9138-2aaca9e6fbd7" [label="lastSent = N 
+ [split attribute: expense]"]
+	"96a13430-f5ae-4959-bd77-31f81c4ffca9" -> "bf0b4b5d-fbf8-48ec-9138-2aaca9e6fbd7"
+	"94edab77-dde0-4eb0-9d8d-33053017c577" [label="expense <= 10.0 
+ [split attribute: amount]"]
+	"bf0b4b5d-fbf8-48ec-9138-2aaca9e6fbd7" -> "94edab77-dde0-4eb0-9d8d-33053017c577"
+	"739e8051-f5d3-4519-b87a-e513e27f9411" [label="amount <= 541.8 
+ [split attribute: amount]"]
+	"94edab77-dde0-4eb0-9d8d-33053017c577" -> "739e8051-f5d3-4519-b87a-e513e27f9411"
+	"a56f192b-abbe-407f-b35e-b8aac9ac252c" [label="amount <= 19.95 
+ [split attribute: amount]"]
+	"739e8051-f5d3-4519-b87a-e513e27f9411" -> "a56f192b-abbe-407f-b35e-b8aac9ac252c"
+	"ebda1fa8-bd3e-417f-a6db-85401fdaa105" [label="amount <= 18.78 
+ [Classes]: 
+ - skip_3: 4.101 
+ - skip_4: 8.1216"]
+	"a56f192b-abbe-407f-b35e-b8aac9ac252c" -> "ebda1fa8-bd3e-417f-a6db-85401fdaa105"
+	"c377b836-5b80-49d5-975a-02bd366d3850" [label="amount > 18.78 
+ [split attribute: amount]"]
+	"a56f192b-abbe-407f-b35e-b8aac9ac252c" -> "c377b836-5b80-49d5-975a-02bd366d3850"
+	"87021628-a737-4282-b879-5e2f7cd2763a" [label="amount <= 19.0 
+ [Classes]: 
+ - skip_3: 7.1314 
+ - skip_4: 28.9332"]
+	"c377b836-5b80-49d5-975a-02bd366d3850" -> "87021628-a737-4282-b879-5e2f7cd2763a"
+	"be461ac8-643b-4be5-a9e3-8c3eeae408b2" [label="amount > 19.0 
+ [split attribute: expense]"]
+	"c377b836-5b80-49d5-975a-02bd366d3850" -> "be461ac8-643b-4be5-a9e3-8c3eeae408b2"
+	"2bc67ae2-cf55-4394-850a-ca0607faf2b2" [label="expense <= 6.71 
+ [Classes]: 
+ - skip_3: 8.1794 
+ - skip_4: 29.6946"]
+	"be461ac8-643b-4be5-a9e3-8c3eeae408b2" -> "2bc67ae2-cf55-4394-850a-ca0607faf2b2"
+	"161d3e58-d474-4faf-a81a-104c0954ddc2" [label="expense > 6.71 
+ [split attribute: amount]"]
+	"be461ac8-643b-4be5-a9e3-8c3eeae408b2" -> "161d3e58-d474-4faf-a81a-104c0954ddc2"
+	"f7879946-b19f-408c-9433-4cc7a2c6d0cf" [label="amount <= 19.68 
+ [Classes]: 
+ - skip_3: 0.801 
+ - skip_4: 0.5076"]
+	"161d3e58-d474-4faf-a81a-104c0954ddc2" -> "f7879946-b19f-408c-9433-4cc7a2c6d0cf"
+	"9b98ec94-857a-463c-8871-958ca1598e9c" [label="amount > 19.68 
+ [Classes]: 
+ - skip_3: 2.3097 
+ - skip_4: 9.6444"]
+	"161d3e58-d474-4faf-a81a-104c0954ddc2" -> "9b98ec94-857a-463c-8871-958ca1598e9c"
+	"ad665ec6-fd9c-432f-83c9-f95e50e5e541" [label="amount > 19.95 
+ [split attribute: amount]"]
+	"739e8051-f5d3-4519-b87a-e513e27f9411" -> "ad665ec6-fd9c-432f-83c9-f95e50e5e541"
+	"d03742eb-6032-4c98-9ea5-61c26d7daf4f" [label="amount <= 25.0 
+ [Classes]: 
+ - skip_3: 65.464 
+ - skip_4: 0.7614"]
+	"ad665ec6-fd9c-432f-83c9-f95e50e5e541" -> "d03742eb-6032-4c98-9ea5-61c26d7daf4f"
+	"f5e29dd3-5095-461f-b61a-1ca782fea13a" [label="amount > 25.0 
+ [split attribute: amount]"]
+	"ad665ec6-fd9c-432f-83c9-f95e50e5e541" -> "f5e29dd3-5095-461f-b61a-1ca782fea13a"
+	"929efec5-3e15-40c2-8498-25e72bafceac" [label="amount <= 312.97 
+ [split attribute: amount]"]
+	"f5e29dd3-5095-461f-b61a-1ca782fea13a" -> "929efec5-3e15-40c2-8498-25e72bafceac"
+	"fa4f8f67-c296-4436-8263-aee0694a0968" [label="amount <= 32.8 
+ [split attribute: amount]"]
+	"929efec5-3e15-40c2-8498-25e72bafceac" -> "fa4f8f67-c296-4436-8263-aee0694a0968"
+	"2f3b5725-2868-4c0e-b4a4-f0f00684a41c" [label="amount <= 31.3 
+ [split attribute: expense]"]
+	"fa4f8f67-c296-4436-8263-aee0694a0968" -> "2f3b5725-2868-4c0e-b4a4-f0f00684a41c"
+	"0adbd7dd-4ec4-42a8-9c05-fe7530325d02" [label="expense <= 6.46 
+ [split attribute: notificationType]"]
+	"2f3b5725-2868-4c0e-b4a4-f0f00684a41c" -> "0adbd7dd-4ec4-42a8-9c05-fe7530325d02"
+	"045cbc43-8acc-44a7-988a-c2ed23f9365e" [label="notificationType = P 
+ [Classes]: 
+ - skip_3: 89.2042 
+ - skip_4: 48.4758"]
+	"0adbd7dd-4ec4-42a8-9c05-fe7530325d02" -> "045cbc43-8acc-44a7-988a-c2ed23f9365e"
+	"4d750d80-9b67-4956-9af8-c4e2458bcbad" [label="expense > 6.46 
+ [Classes]: 
+ - skip_3: 32.0442 
+ - skip_4: 18.7812"]
+	"2f3b5725-2868-4c0e-b4a4-f0f00684a41c" -> "4d750d80-9b67-4956-9af8-c4e2458bcbad"
+	"ee7e3f13-2ad8-4689-8a7c-e710b9cae903" [label="amount > 31.3 
+ [split attribute: amount]"]
+	"fa4f8f67-c296-4436-8263-aee0694a0968" -> "ee7e3f13-2ad8-4689-8a7c-e710b9cae903"
+	"66f49a76-6fab-41a3-8cad-5aa4ab622582" [label="amount <= 32.0 
+ [split attribute: notificationType]"]
+	"ee7e3f13-2ad8-4689-8a7c-e710b9cae903" -> "66f49a76-6fab-41a3-8cad-5aa4ab622582"
+	"123bf772-66e4-4e18-8468-cfb721c59477" [label="notificationType = P 
+ [Classes]: 
+ - skip_3: 185.6018 
+ - skip_4: 397.9584"]
+	"66f49a76-6fab-41a3-8cad-5aa4ab622582" -> "123bf772-66e4-4e18-8468-cfb721c59477"
+	"19250e83-4afd-4c5b-9a19-6bc1ae284674" [label="amount > 32.0 
+ [split attribute: notificationType]"]
+	"ee7e3f13-2ad8-4689-8a7c-e710b9cae903" -> "19250e83-4afd-4c5b-9a19-6bc1ae284674"
+	"01732f36-1a3d-4ea9-9875-406a97875f05" [label="notificationType = P 
+ [Classes]: 
+ - skip_3: 135.2594 
+ - skip_4: 162.9396"]
+	"19250e83-4afd-4c5b-9a19-6bc1ae284674" -> "01732f36-1a3d-4ea9-9875-406a97875f05"
+	"b07ee1bf-a1eb-4e9b-911f-da5d39118fe0" [label="amount > 32.8 
+ [split attribute: amount]"]
+	"929efec5-3e15-40c2-8498-25e72bafceac" -> "b07ee1bf-a1eb-4e9b-911f-da5d39118fe0"
+	"23c2d28c-d419-491d-8d68-c5407908d4c7" [label="amount <= 47.0 
+ [Classes]: 
+ - skip_3: 868.2432 
+ - skip_4: 127.017"]
+	"b07ee1bf-a1eb-4e9b-911f-da5d39118fe0" -> "23c2d28c-d419-491d-8d68-c5407908d4c7"
+	"6dea30ac-7b7d-4ce8-8070-410dcefdd53b" [label="amount > 47.0 
+ [split attribute: amount]"]
+	"b07ee1bf-a1eb-4e9b-911f-da5d39118fe0" -> "6dea30ac-7b7d-4ce8-8070-410dcefdd53b"
+	"697aa0d5-1f7b-4c94-a3c9-eacd8e446e58" [label="amount <= 125.19 
+ [split attribute: amount]"]
+	"6dea30ac-7b7d-4ce8-8070-410dcefdd53b" -> "697aa0d5-1f7b-4c94-a3c9-eacd8e446e58"
+	"dbf07280-b872-4d9e-b18b-9452f8a9cc3e" [label="amount <= 68.77 
+ [Classes]: 
+ - skip_3: 614.199 
+ - skip_4: 263.444"]
+	"697aa0d5-1f7b-4c94-a3c9-eacd8e446e58" -> "dbf07280-b872-4d9e-b18b-9452f8a9cc3e"
+	"2dd7d9a7-ab2c-4781-ba97-b5c298316515" [label="amount > 68.77 
+ [Classes]: 
+ - skip_3: 90.8668 
+ - skip_4: 23.228"]
+	"697aa0d5-1f7b-4c94-a3c9-eacd8e446e58" -> "2dd7d9a7-ab2c-4781-ba97-b5c298316515"
+	"5d79ba38-f631-45f2-b826-979d2a0698e2" [label="amount > 125.19 
+ [split attribute: amount]"]
+	"6dea30ac-7b7d-4ce8-8070-410dcefdd53b" -> "5d79ba38-f631-45f2-b826-979d2a0698e2"
+	"eea702e2-85ab-48e4-b2d7-3853441c8fd8" [label="amount <= 137.55 
+ [Classes]: 
+ - skip_3: 77.909 
+ - skip_4: 124.058"]
+	"5d79ba38-f631-45f2-b826-979d2a0698e2" -> "eea702e2-85ab-48e4-b2d7-3853441c8fd8"
+	"44357e96-c357-4531-999a-0c97ce37e6c1" [label="amount > 137.55 
+ [Classes]: 
+ - skip_3: 169.9408 
+ - skip_4: 115.807"]
+	"5d79ba38-f631-45f2-b826-979d2a0698e2" -> "44357e96-c357-4531-999a-0c97ce37e6c1"
+	"bfe80c44-d429-45ad-b3a3-46d0e2e5c308" [label="amount > 312.97 
+ [Classes]: 
+ - skip_3: 0.6412 
+ - skip_4: 4.5684"]
+	"f5e29dd3-5095-461f-b61a-1ca782fea13a" -> "bfe80c44-d429-45ad-b3a3-46d0e2e5c308"
+	"34f666ee-8b13-45db-b3bb-6648ddf33f03" [label="amount > 541.8 
+ [Classes]: 
+ - skip_3: 4.5744 
+ - skip_4: 24.5228"]
+	"94edab77-dde0-4eb0-9d8d-33053017c577" -> "34f666ee-8b13-45db-b3bb-6648ddf33f03"
+	"360f01cf-8d28-4baf-9dba-9bf50110b925" [label="expense > 10.0 
+ [split attribute: expense]"]
+	"bf0b4b5d-fbf8-48ec-9138-2aaca9e6fbd7" -> "360f01cf-8d28-4baf-9dba-9bf50110b925"
+	"72dece86-3714-4bdb-b4d2-8f99751fd43a" [label="expense <= 11.0 
+ [split attribute: amount]"]
+	"360f01cf-8d28-4baf-9dba-9bf50110b925" -> "72dece86-3714-4bdb-b4d2-8f99751fd43a"
+	"04e6b8c9-04fe-480a-ac44-51e3dc6da1da" [label="amount <= 35.0 
+ [split attribute: amount]"]
+	"72dece86-3714-4bdb-b4d2-8f99751fd43a" -> "04e6b8c9-04fe-480a-ac44-51e3dc6da1da"
+	"ebbf578b-d975-4db1-b7c5-c772b97b855c" [label="amount <= 32.8 
+ [split attribute: amount]"]
+	"04e6b8c9-04fe-480a-ac44-51e3dc6da1da" -> "ebbf578b-d975-4db1-b7c5-c772b97b855c"
+	"c33ff4f0-650a-4e88-b477-590a8fb9b7cf" [label="amount <= 21.0 
+ [split attribute: amount]"]
+	"ebbf578b-d975-4db1-b7c5-c772b97b855c" -> "c33ff4f0-650a-4e88-b477-590a8fb9b7cf"
+	"83688e75-62d2-471f-baa7-fbe33eabbe28" [label="amount <= 19.68 
+ [Classes]: 
+ - skip_3: 2.7132 
+ - skip_4: 1.5228"]
+	"c33ff4f0-650a-4e88-b477-590a8fb9b7cf" -> "83688e75-62d2-471f-baa7-fbe33eabbe28"
+	"961f6fa1-15ce-4c52-99f8-761bbcc8aeeb" [label="amount > 19.68 
+ [split attribute: amount]"]
+	"c33ff4f0-650a-4e88-b477-590a8fb9b7cf" -> "961f6fa1-15ce-4c52-99f8-761bbcc8aeeb"
+	"2f05b655-3077-4ee2-8c7f-44735bb05ed0" [label="amount <= 19.95 
+ [Classes]: 
+ - skip_3: 1.2274 
+ - skip_4: 44.1612"]
+	"961f6fa1-15ce-4c52-99f8-761bbcc8aeeb" -> "2f05b655-3077-4ee2-8c7f-44735bb05ed0"
+	"6f858364-2b2e-4bbd-b4ce-66c0f6646003" [label="amount > 19.95 
+ [Classes]: 
+ - skip_3: 11.2912 
+ - skip_4: 104.058"]
+	"961f6fa1-15ce-4c52-99f8-761bbcc8aeeb" -> "6f858364-2b2e-4bbd-b4ce-66c0f6646003"
+	"6b25a726-9608-4ba0-98a7-9c8acf9cb564" [label="amount > 21.0 
+ [Classes]: 
+ - skip_3: 208.7872"]
+	"ebbf578b-d975-4db1-b7c5-c772b97b855c" -> "6b25a726-9608-4ba0-98a7-9c8acf9cb564"
+	"9c9fc1e7-bac9-491b-90ee-f77f4019ac48" [label="amount > 32.8 
+ [split attribute: vehicleClass]"]
+	"04e6b8c9-04fe-480a-ac44-51e3dc6da1da" -> "9c9fc1e7-bac9-491b-90ee-f77f4019ac48"
+	"d3634256-cc8e-4981-a7ff-12c1668ea520" [label="vehicleClass = A 
+ [split attribute: amount]"]
+	"9c9fc1e7-bac9-491b-90ee-f77f4019ac48" -> "d3634256-cc8e-4981-a7ff-12c1668ea520"
+	"335569f2-084a-43b8-9a7d-890f6a76499c" [label="amount <= 33.6 
+ [Classes]: 
+ - skip_3: 137.5468 
+ - skip_4: 395.928"]
+	"d3634256-cc8e-4981-a7ff-12c1668ea520" -> "335569f2-084a-43b8-9a7d-890f6a76499c"
+	"ce90887e-033c-45a7-a2fc-3d2cb2c5b115" [label="amount > 33.6 
+ [Classes]: 
+ - skip_3: 242.5094 
+ - skip_4: 888.3"]
+	"d3634256-cc8e-4981-a7ff-12c1668ea520" -> "ce90887e-033c-45a7-a2fc-3d2cb2c5b115"
+	"38170801-e790-463e-a876-2cb163ef3aea" [label="vehicleClass = C 
+ [Classes]: 
+ - skip_3: 1.938 
+ - skip_4: 9.6444"]
+	"9c9fc1e7-bac9-491b-90ee-f77f4019ac48" -> "38170801-e790-463e-a876-2cb163ef3aea"
+	"dd7c8224-b426-4494-8f83-646e07993f7c" [label="vehicleClass = M 
+ [Classes]: 
+ - skip_3: 0.646 
+ - skip_4: 3.2994"]
+	"9c9fc1e7-bac9-491b-90ee-f77f4019ac48" -> "dd7c8224-b426-4494-8f83-646e07993f7c"
+	"61765da4-8a68-4635-ab38-5bce588a5cae" [label="amount > 35.0 
+ [Classes]: 
+ - skip_3: 473.0042 
+ - skip_4: 95.0078"]
+	"72dece86-3714-4bdb-b4d2-8f99751fd43a" -> "61765da4-8a68-4635-ab38-5bce588a5cae"
+	"1129a870-77c6-4f45-9567-c0b586769764" [label="expense > 11.0 
+ [split attribute: expense]"]
+	"360f01cf-8d28-4baf-9dba-9bf50110b925" -> "1129a870-77c6-4f45-9567-c0b586769764"
+	"a243c529-3f28-4059-93a3-be8fe7973a67" [label="expense <= 12.91 
+ [Classes]: 
+ - skip_3: 608.1722 
+ - skip_4: 126.5776"]
+	"1129a870-77c6-4f45-9567-c0b586769764" -> "a243c529-3f28-4059-93a3-be8fe7973a67"
+	"aa0ac207-df42-44d4-99a3-ab3995cb81d1" [label="expense > 12.91 
+ [split attribute: amount]"]
+	"1129a870-77c6-4f45-9567-c0b586769764" -> "aa0ac207-df42-44d4-99a3-ab3995cb81d1"
+	"2b6460e1-e41c-4ea0-a958-28b4651fe580" [label="amount <= 35.0 
+ [split attribute: amount]"]
+	"aa0ac207-df42-44d4-99a3-ab3995cb81d1" -> "2b6460e1-e41c-4ea0-a958-28b4651fe580"
+	"a8d9f9a7-3db9-4b12-98cb-7a46c3690d5a" [label="amount <= 25.0 
+ [split attribute: amount]"]
+	"2b6460e1-e41c-4ea0-a958-28b4651fe580" -> "a8d9f9a7-3db9-4b12-98cb-7a46c3690d5a"
+	"93ca96f5-99c8-46ad-a27c-cf6c2ecf60a2" [label="amount <= 21.0 
+ [split attribute: expense]"]
+	"a8d9f9a7-3db9-4b12-98cb-7a46c3690d5a" -> "93ca96f5-99c8-46ad-a27c-cf6c2ecf60a2"
+	"659ac2c1-f8a9-4d03-823c-78b5d6ff214e" [label="expense <= 15.16 
+ [Classes]: 
+ - skip_3: 22.0428 
+ - skip_4: 3.0304"]
+	"93ca96f5-99c8-46ad-a27c-cf6c2ecf60a2" -> "659ac2c1-f8a9-4d03-823c-78b5d6ff214e"
+	"5f4cd8a4-4171-454f-8a2e-9e29b07b204c" [label="expense > 15.16 
+ [split attribute: amount]"]
+	"93ca96f5-99c8-46ad-a27c-cf6c2ecf60a2" -> "5f4cd8a4-4171-454f-8a2e-9e29b07b204c"
+	"e7237cac-83c4-4d92-983e-85e2ca12cf30" [label="amount <= 18.78 
+ [Classes]: 
+ - skip_3: 0.864 
+ - skip_4: 2.538"]
+	"5f4cd8a4-4171-454f-8a2e-9e29b07b204c" -> "e7237cac-83c4-4d92-983e-85e2ca12cf30"
+	"912bfe70-3423-4041-8065-d5fd8e3c468e" [label="amount > 18.78 
+ [split attribute: amount]"]
+	"5f4cd8a4-4171-454f-8a2e-9e29b07b204c" -> "912bfe70-3423-4041-8065-d5fd8e3c468e"
+	"e08487cb-8cc7-4821-b142-789f1d28ee22" [label="amount <= 19.68 
+ [Classes]: 
+ - skip_3: 2.16"]
+	"912bfe70-3423-4041-8065-d5fd8e3c468e" -> "e08487cb-8cc7-4821-b142-789f1d28ee22"
+	"a63ee458-7bfa-45f9-b34f-960e9d736307" [label="amount > 19.68 
+ [Classes]: 
+ - skip_3: 13.104 
+ - skip_4: 8.6292"]
+	"912bfe70-3423-4041-8065-d5fd8e3c468e" -> "a63ee458-7bfa-45f9-b34f-960e9d736307"
+	"882d8306-ea5d-4d70-8896-c955acc066e8" [label="amount > 21.0 
+ [split attribute: amount]"]
+	"a8d9f9a7-3db9-4b12-98cb-7a46c3690d5a" -> "882d8306-ea5d-4d70-8896-c955acc066e8"
+	"f927759d-e6e4-4a80-b11d-23803f76613b" [label="amount <= 24.0 
+ [split attribute: amount]"]
+	"882d8306-ea5d-4d70-8896-c955acc066e8" -> "f927759d-e6e4-4a80-b11d-23803f76613b"
+	"3b5df8f4-42b7-415f-be8e-3d78edfdb1fe" [label="amount <= 22.0 
+ [split attribute: article]"]
+	"f927759d-e6e4-4a80-b11d-23803f76613b" -> "3b5df8f4-42b7-415f-be8e-3d78edfdb1fe"
+	"ddd67e26-a8ca-409e-b13a-16f721eba1d9" [label="article = 181 
+ [Classes]: 
+ - skip_3: 1.145 
+ - skip_4: 7.614"]
+	"3b5df8f4-42b7-415f-be8e-3d78edfdb1fe" -> "ddd67e26-a8ca-409e-b13a-16f721eba1d9"
+	"2e6da1cf-310e-430f-84c2-7dee03ae8f2c" [label="article = 7 
+ [Classes]: 
+ - skip_3: 20.9878 
+ - skip_4: 97.2054"]
+	"3b5df8f4-42b7-415f-be8e-3d78edfdb1fe" -> "2e6da1cf-310e-430f-84c2-7dee03ae8f2c"
+	"0a14d3f2-cc6b-404c-8538-8f150af21039" [label="amount > 22.0 
+ [split attribute: expense]"]
+	"f927759d-e6e4-4a80-b11d-23803f76613b" -> "0a14d3f2-cc6b-404c-8538-8f150af21039"
+	"fbeae2fe-5e2f-42f5-b227-a6000bd42033" [label="expense <= 30.3 
+ [Classes]: 
+ - skip_3: 66.9955 
+ - skip_4: 231.2118"]
+	"0a14d3f2-cc6b-404c-8538-8f150af21039" -> "fbeae2fe-5e2f-42f5-b227-a6000bd42033"
+	"5c5d23e6-0b90-4043-8b7c-c8d9964025e2" [label="expense > 30.3 
+ [Classes]: 
+ - skip_3: 1.38 
+ - skip_4: 5.076"]
+	"0a14d3f2-cc6b-404c-8538-8f150af21039" -> "5c5d23e6-0b90-4043-8b7c-c8d9964025e2"
+	"ae4eaa46-2dee-46b4-97a2-5e5a946bd99b" [label="amount > 24.0 
+ [split attribute: expense]"]
+	"882d8306-ea5d-4d70-8896-c955acc066e8" -> "ae4eaa46-2dee-46b4-97a2-5e5a946bd99b"
+	"200abdd4-d8d1-47fc-92fe-8546f631e536" [label="expense <= 15.16 
+ [Classes]: 
+ - skip_3: 1.9266 
+ - skip_4: 9.1368"]
+	"ae4eaa46-2dee-46b4-97a2-5e5a946bd99b" -> "200abdd4-d8d1-47fc-92fe-8546f631e536"
+	"82e0154f-1f1e-402e-8778-91b0fcfa6b3c" [label="expense > 15.16 
+ [split attribute: article]"]
+	"ae4eaa46-2dee-46b4-97a2-5e5a946bd99b" -> "82e0154f-1f1e-402e-8778-91b0fcfa6b3c"
+	"2badde74-9228-4a7f-8aac-6b4737a73e42" [label="article = 181 
+ [Classes]: 
+ - skip_3: 0.0998 
+ - skip_4: 11.9286"]
+	"82e0154f-1f1e-402e-8778-91b0fcfa6b3c" -> "2badde74-9228-4a7f-8aac-6b4737a73e42"
+	"8fc6a251-82e5-44da-b4a1-bf27a5b566fa" [label="article = 7 
+ [Classes]: 
+ - skip_3: 6.3416 
+ - skip_4: 56.5974"]
+	"82e0154f-1f1e-402e-8778-91b0fcfa6b3c" -> "8fc6a251-82e5-44da-b4a1-bf27a5b566fa"
+	"974f5f03-6612-4bfa-944d-0565691ad669" [label="amount > 25.0 
+ [Classes]: 
+ - skip_3: 1099.877 
+ - skip_4: 106.3422"]
+	"2b6460e1-e41c-4ea0-a958-28b4651fe580" -> "974f5f03-6612-4bfa-944d-0565691ad669"
+	"555f19aa-8e45-4caa-9511-13d8cad8744a" [label="amount > 35.0 
+ [split attribute: expense]"]
+	"aa0ac207-df42-44d4-99a3-ab3995cb81d1" -> "555f19aa-8e45-4caa-9511-13d8cad8744a"
+	"fe86cb22-6bed-4604-99c9-7e3ab939f68f" [label="expense <= 15.0 
+ [split attribute: points]"]
+	"555f19aa-8e45-4caa-9511-13d8cad8744a" -> "fe86cb22-6bed-4604-99c9-7e3ab939f68f"
+	"a2b4231c-3699-41df-a4a3-4d1c271a7fb2" [label="points <= 2.0 
+ [split attribute: amount]"]
+	"fe86cb22-6bed-4604-99c9-7e3ab939f68f" -> "a2b4231c-3699-41df-a4a3-4d1c271a7fb2"
+	"70614013-5288-4321-b8be-5595f82711c9" [label="amount <= 343.35 
+ [split attribute: amount]"]
+	"a2b4231c-3699-41df-a4a3-4d1c271a7fb2" -> "70614013-5288-4321-b8be-5595f82711c9"
+	"64ea5b59-2f79-464e-8557-02f06f6cef99" [label="amount <= 155.0 
+ [split attribute: amount]"]
+	"70614013-5288-4321-b8be-5595f82711c9" -> "64ea5b59-2f79-464e-8557-02f06f6cef99"
+	"a79a5cb6-f920-468d-9611-46350525c4e6" [label="amount <= 38.0 
+ [Classes]: 
+ - skip_3: 422.373 
+ - skip_4: 1360.6218"]
+	"64ea5b59-2f79-464e-8557-02f06f6cef99" -> "a79a5cb6-f920-468d-9611-46350525c4e6"
+	"87e0dfec-0fdd-4f70-980e-82ad7e8c0516" [label="amount > 38.0 
+ [Classes]: 
+ - skip_3: 262.0919 
+ - skip_4: 367.3504"]
+	"64ea5b59-2f79-464e-8557-02f06f6cef99" -> "87e0dfec-0fdd-4f70-980e-82ad7e8c0516"
+	"0374a245-3b39-4118-8a19-919173107a33" [label="amount > 155.0 
+ [Classes]: 
+ - skip_3: 4.6065 
+ - skip_4: 4.7918"]
+	"70614013-5288-4321-b8be-5595f82711c9" -> "0374a245-3b39-4118-8a19-919173107a33"
+	"def26bb8-8202-4154-950e-893e1fbed129" [label="amount > 343.35 
+ [Classes]: 
+ - skip_3: 0.0939 
+ - skip_4: 15.7356"]
+	"a2b4231c-3699-41df-a4a3-4d1c271a7fb2" -> "def26bb8-8202-4154-950e-893e1fbed129"
+	"6b88fe77-c8a8-455d-a214-fa1e21837586" [label="points > 2.0 
+ [Classes]: 
+ - skip_4: 22.5882"]
+	"fe86cb22-6bed-4604-99c9-7e3ab939f68f" -> "6b88fe77-c8a8-455d-a214-fa1e21837586"
+	"1b19e862-e99a-42f5-88ae-9ee81b46f1d9" [label="expense > 15.0 
+ [split attribute: expense]"]
+	"555f19aa-8e45-4caa-9511-13d8cad8744a" -> "1b19e862-e99a-42f5-88ae-9ee81b46f1d9"
+	"231c976f-d2bc-4b75-9b2a-92667a418255" [label="expense <= 15.6 
+ [Classes]: 
+ - skip_3: 142.6213 
+ - skip_4: 50.076"]
+	"1b19e862-e99a-42f5-88ae-9ee81b46f1d9" -> "231c976f-d2bc-4b75-9b2a-92667a418255"
+	"c67c09fb-5c47-4bfe-8e34-053b1f504596" [label="expense > 15.6 
+ [split attribute: expense]"]
+	"1b19e862-e99a-42f5-88ae-9ee81b46f1d9" -> "c67c09fb-5c47-4bfe-8e34-053b1f504596"
+	"f1d48c9b-22d0-48ea-80da-0a6f4174dd60" [label="expense <= 17.04 
+ [Classes]: 
+ - skip_3: 104.7439 
+ - skip_4: 188.011"]
+	"c67c09fb-5c47-4bfe-8e34-053b1f504596" -> "f1d48c9b-22d0-48ea-80da-0a6f4174dd60"
+	"f0f86613-9a8f-4d01-b905-4717296c4afe" [label="expense > 17.04 
+ [Classes]: 
+ - skip_3: 68.6716 
+ - skip_4: 172.4016"]
+	"c67c09fb-5c47-4bfe-8e34-053b1f504596" -> "f0f86613-9a8f-4d01-b905-4717296c4afe"
+	"bfbb5586-2ad1-4656-a328-f558e225c2c5" [label="lastSent = P 
+ [split attribute: expense]"]
+	"96a13430-f5ae-4959-bd77-31f81c4ffca9" -> "bfbb5586-2ad1-4656-a328-f558e225c2c5"
+	"76edfff9-fc3b-43be-a944-6771da0acafa" [label="expense <= 13.5 
+ [split attribute: amount]"]
+	"bfbb5586-2ad1-4656-a328-f558e225c2c5" -> "76edfff9-fc3b-43be-a944-6771da0acafa"
+	"ab49d9e7-31d2-412f-a2c6-a6d72cb87747" [label="amount <= 19.95 
+ [split attribute: amount]"]
+	"76edfff9-fc3b-43be-a944-6771da0acafa" -> "ab49d9e7-31d2-412f-a2c6-a6d72cb87747"
+	"74362823-dd84-44a2-ab34-8f566992af97" [label="amount <= 19.68 
+ [split attribute: amount]"]
+	"ab49d9e7-31d2-412f-a2c6-a6d72cb87747" -> "74362823-dd84-44a2-ab34-8f566992af97"
+	"b7252835-6d74-4caf-8708-59de229ba0ca" [label="amount <= 18.78 
+ [split attribute: expense]"]
+	"74362823-dd84-44a2-ab34-8f566992af97" -> "b7252835-6d74-4caf-8708-59de229ba0ca"
+	"dbe169b7-e3a3-4156-a85a-1cafb7a55e6a" [label="expense <= 6.71 
+ [Classes]: 
+ - skip_3: 13.9307 
+ - skip_4: 22.3913"]
+	"b7252835-6d74-4caf-8708-59de229ba0ca" -> "dbe169b7-e3a3-4156-a85a-1cafb7a55e6a"
+	"aee100aa-ba7e-401d-af29-60f03b0dcb74" [label="expense > 6.71 
+ [Classes]: 
+ - skip_3: 3.8182 
+ - skip_4: 16.0014"]
+	"b7252835-6d74-4caf-8708-59de229ba0ca" -> "aee100aa-ba7e-401d-af29-60f03b0dcb74"
+	"1143150e-649d-4f1f-93f0-9853e81fa7b7" [label="amount > 18.78 
+ [split attribute: expense]"]
+	"74362823-dd84-44a2-ab34-8f566992af97" -> "1143150e-649d-4f1f-93f0-9853e81fa7b7"
+	"f887e11b-788b-4db3-8ac5-065cf8f0869d" [label="expense <= 6.71 
+ [Classes]: 
+ - skip_3: 20.5231 
+ - skip_4: 84.5091"]
+	"1143150e-649d-4f1f-93f0-9853e81fa7b7" -> "f887e11b-788b-4db3-8ac5-065cf8f0869d"
+	"ac7c9969-f556-4c69-8277-d0007b3135b7" [label="expense > 6.71 
+ [split attribute: amount]"]
+	"1143150e-649d-4f1f-93f0-9853e81fa7b7" -> "ac7c9969-f556-4c69-8277-d0007b3135b7"
+	"290a35a4-1238-4f0a-8343-a3b92f5ab987" [label="amount <= 19.0 
+ [Classes]: 
+ - skip_3: 18.7863 
+ - skip_4: 82.3422"]
+	"ac7c9969-f556-4c69-8277-d0007b3135b7" -> "290a35a4-1238-4f0a-8343-a3b92f5ab987"
+	"28f34e13-5901-4503-bb86-f12e72d99ca8" [label="amount > 19.0 
+ [Classes]: 
+ - skip_3: 8.3162 
+ - skip_4: 5.7784"]
+	"ac7c9969-f556-4c69-8277-d0007b3135b7" -> "28f34e13-5901-4503-bb86-f12e72d99ca8"
+	"81366999-8aa7-4d57-b124-1e27f076e10e" [label="amount > 19.68 
+ [Classes]: 
+ - skip_3: 10.9497 
+ - skip_4: 153.1276"]
+	"ab49d9e7-31d2-412f-a2c6-a6d72cb87747" -> "81366999-8aa7-4d57-b124-1e27f076e10e"
+	"2e17bd3a-c971-4db7-a9c7-c3045c1ad8b6" [label="amount > 19.95 
+ [split attribute: amount]"]
+	"76edfff9-fc3b-43be-a944-6771da0acafa" -> "2e17bd3a-c971-4db7-a9c7-c3045c1ad8b6"
+	"5733bc77-dd29-4015-b315-8dbc5fbc89d8" [label="amount <= 328.0 
+ [split attribute: points]"]
+	"2e17bd3a-c971-4db7-a9c7-c3045c1ad8b6" -> "5733bc77-dd29-4015-b315-8dbc5fbc89d8"
+	"ad287466-fd44-465e-b1b0-9f700817e7a5" [label="points <= 5.0 
+ [split attribute: amount]"]
+	"5733bc77-dd29-4015-b315-8dbc5fbc89d8" -> "ad287466-fd44-465e-b1b0-9f700817e7a5"
+	"e52af3b2-975a-4abf-9915-e813caca38fe" [label="amount <= 22.0 
+ [split attribute: amount]"]
+	"ad287466-fd44-465e-b1b0-9f700817e7a5" -> "e52af3b2-975a-4abf-9915-e813caca38fe"
+	"d1a50e28-a24a-4143-a324-07eff09c28aa" [label="amount <= 21.0 
+ [Classes]: 
+ - skip_3: 98.1038 
+ - skip_4: 296.143"]
+	"e52af3b2-975a-4abf-9915-e813caca38fe" -> "d1a50e28-a24a-4143-a324-07eff09c28aa"
+	"d4a1984d-160e-4549-b71f-d341276356ce" [label="amount > 21.0 
+ [split attribute: article]"]
+	"e52af3b2-975a-4abf-9915-e813caca38fe" -> "d4a1984d-160e-4549-b71f-d341276356ce"
+	"3e6e68d0-dc4c-4687-9019-155c07bf4126" [label="article = 181 
+ [Classes]: 
+ - skip_3: 5.763 
+ - skip_4: 21.669"]
+	"d4a1984d-160e-4549-b71f-d341276356ce" -> "3e6e68d0-dc4c-4687-9019-155c07bf4126"
+	"fcbfef63-e5f3-4791-95f3-73cf4995e48c" [label="article = 7 
+ [split attribute: expense]"]
+	"d4a1984d-160e-4549-b71f-d341276356ce" -> "fcbfef63-e5f3-4791-95f3-73cf4995e48c"
+	"f90fd260-0780-4283-824f-e90483f699b6" [label="expense <= 13.25 
+ [Classes]: 
+ - skip_3: 67.7695 
+ - skip_4: 171.9074"]
+	"fcbfef63-e5f3-4791-95f3-73cf4995e48c" -> "f90fd260-0780-4283-824f-e90483f699b6"
+	"d8acd881-9363-40e2-8d6e-8fe73e968ebf" [label="expense > 13.25 
+ [Classes]: 
+ - skip_3: 35.5183 
+ - skip_4: 91.0098"]
+	"fcbfef63-e5f3-4791-95f3-73cf4995e48c" -> "d8acd881-9363-40e2-8d6e-8fe73e968ebf"
+	"6a116d35-cce5-47ea-939e-f33a91d08424" [label="amount > 22.0 
+ [split attribute: amount]"]
+	"ad287466-fd44-465e-b1b0-9f700817e7a5" -> "6a116d35-cce5-47ea-939e-f33a91d08424"
+	"cb793347-355a-4141-9775-942bece0e329" [label="amount <= 38.0 
+ [split attribute: amount]"]
+	"6a116d35-cce5-47ea-939e-f33a91d08424" -> "cb793347-355a-4141-9775-942bece0e329"
+	"c4d0f948-1c85-4a20-9ff8-f369a5b478e9" [label="amount <= 31.3 
+ [split attribute: amount]"]
+	"cb793347-355a-4141-9775-942bece0e329" -> "c4d0f948-1c85-4a20-9ff8-f369a5b478e9"
+	"de8221a9-a74c-4ff5-bda2-d08c90bfb04c" [label="amount <= 23.0 
+ [Classes]: 
+ - skip_3: 167.2807 
+ - skip_4: 321.4235"]
+	"c4d0f948-1c85-4a20-9ff8-f369a5b478e9" -> "de8221a9-a74c-4ff5-bda2-d08c90bfb04c"
+	"83488228-b699-4599-aee7-2557b459a209" [label="amount > 23.0 
+ [split attribute: amount]"]
+	"c4d0f948-1c85-4a20-9ff8-f369a5b478e9" -> "83488228-b699-4599-aee7-2557b459a209"
+	"1eed69ba-813c-47bc-86b4-6a6e0fe99d6f" [label="amount <= 25.0 
+ [Classes]: 
+ - skip_3: 203.4339 
+ - skip_4: 28.1697"]
+	"83488228-b699-4599-aee7-2557b459a209" -> "1eed69ba-813c-47bc-86b4-6a6e0fe99d6f"
+	"e252cf56-5581-4080-9238-ac4f2f9683ac" [label="amount > 25.0 
+ [Classes]: 
+ - skip_3: 618.4395 
+ - skip_4: 241.9705"]
+	"83488228-b699-4599-aee7-2557b459a209" -> "e252cf56-5581-4080-9238-ac4f2f9683ac"
+	"2e104967-8a05-4a39-a660-508e40b50a72" [label="amount > 31.3 
+ [split attribute: expense]"]
+	"cb793347-355a-4141-9775-942bece0e329" -> "2e104967-8a05-4a39-a660-508e40b50a72"
+	"2e9e76ce-5b0f-4ec2-9e16-f9904c31770e" [label="expense <= 10.0 
+ [split attribute: amount]"]
+	"2e104967-8a05-4a39-a660-508e40b50a72" -> "2e9e76ce-5b0f-4ec2-9e16-f9904c31770e"
+	"e6edc76c-0d65-455c-be81-44afa6fba445" [label="amount <= 33.6 
+ [Classes]: 
+ - skip_3: 831.1215 
+ - skip_4: 1927.0964"]
+	"2e9e76ce-5b0f-4ec2-9e16-f9904c31770e" -> "e6edc76c-0d65-455c-be81-44afa6fba445"
+	"0cd024ae-6546-4980-b19c-4390cd5ef05f" [label="amount > 33.6 
+ [Classes]: 
+ - skip_3: 1038.7185 
+ - skip_4: 3.6115"]
+	"2e9e76ce-5b0f-4ec2-9e16-f9904c31770e" -> "0cd024ae-6546-4980-b19c-4390cd5ef05f"
+	"5970c7d5-55ae-46f9-9988-8adeffbd9228" [label="expense > 10.0 
+ [split attribute: amount]"]
+	"2e104967-8a05-4a39-a660-508e40b50a72" -> "5970c7d5-55ae-46f9-9988-8adeffbd9228"
+	"28cb4ade-2770-431e-aeec-1325c4150437" [label="amount <= 32.0 
+ [Classes]: 
+ - skip_3: 304.5207"]
+	"5970c7d5-55ae-46f9-9988-8adeffbd9228" -> "28cb4ade-2770-431e-aeec-1325c4150437"
+	"3020d713-8ee5-4865-842b-f7f289776f98" [label="amount > 32.0 
+ [Classes]: 
+ - skip_3: 4995.1608 
+ - skip_4: 7590.6507"]
+	"5970c7d5-55ae-46f9-9988-8adeffbd9228" -> "3020d713-8ee5-4865-842b-f7f289776f98"
+	"1639dad1-4c29-4d72-ae93-4c991f725793" [label="amount > 38.0 
+ [split attribute: amount]"]
+	"6a116d35-cce5-47ea-939e-f33a91d08424" -> "1639dad1-4c29-4d72-ae93-4c991f725793"
+	"8fee4612-7e72-4320-bcdc-f63a27de0360" [label="amount <= 41.0 
+ [Classes]: 
+ - skip_3: 873.6342 
+ - skip_4: 57.0056"]
+	"1639dad1-4c29-4d72-ae93-4c991f725793" -> "8fee4612-7e72-4320-bcdc-f63a27de0360"
+	"97d289f7-2f59-4054-a529-0e47a2294c9b" [label="amount > 41.0 
+ [split attribute: expense]"]
+	"1639dad1-4c29-4d72-ae93-4c991f725793" -> "97d289f7-2f59-4054-a529-0e47a2294c9b"
+	"8bf8fa31-2531-4a02-bdf9-1c726d2d9449" [label="expense <= 10.0 
+ [split attribute: vehicleClass]"]
+	"97d289f7-2f59-4054-a529-0e47a2294c9b" -> "8bf8fa31-2531-4a02-bdf9-1c726d2d9449"
+	"6f54ee22-138c-4173-90e8-9266f4061d52" [label="vehicleClass = A 
+ [Classes]: 
+ - skip_3: 230.4282 
+ - skip_4: 599.7867"]
+	"8bf8fa31-2531-4a02-bdf9-1c726d2d9449" -> "6f54ee22-138c-4173-90e8-9266f4061d52"
+	"ddec4219-828a-460c-9ce0-db122cae922c" [label="vehicleClass = C 
+ [Classes]: 
+ - skip_3: 10.8457 
+ - skip_4: 10.8345"]
+	"8bf8fa31-2531-4a02-bdf9-1c726d2d9449" -> "ddec4219-828a-460c-9ce0-db122cae922c"
+	"76e14fda-45c5-4b1c-96f3-97b783b46ada" [label="vehicleClass = M 
+ [Classes]: 
+ - skip_3: 9.5199 
+ - skip_4: 22.3913"]
+	"8bf8fa31-2531-4a02-bdf9-1c726d2d9449" -> "76e14fda-45c5-4b1c-96f3-97b783b46ada"
+	"b06d8e9a-c441-4f12-89f4-634345416b3a" [label="expense > 10.0 
+ [split attribute: points]"]
+	"97d289f7-2f59-4054-a529-0e47a2294c9b" -> "b06d8e9a-c441-4f12-89f4-634345416b3a"
+	"d6a55e25-db0f-4d83-bea2-cfa7d93599e8" [label="points <= 1.0 
+ [Classes]: 
+ - skip_3: 3261.8968 
+ - skip_4: 1967.7951"]
+	"b06d8e9a-c441-4f12-89f4-634345416b3a" -> "d6a55e25-db0f-4d83-bea2-cfa7d93599e8"
+	"1edd859b-78f8-4bea-9ba6-55f0f35cf3c6" [label="points > 1.0 
+ [Classes]: 
+ - skip_3: 117.1668 
+ - skip_4: 340.5652"]
+	"b06d8e9a-c441-4f12-89f4-634345416b3a" -> "1edd859b-78f8-4bea-9ba6-55f0f35cf3c6"
+	"346a07af-653e-4d0b-8c73-78ba6812534b" [label="points > 5.0 
+ [Classes]: 
+ - skip_3: 5.0 
+ - skip_4: 31.0561"]
+	"5733bc77-dd29-4015-b315-8dbc5fbc89d8" -> "346a07af-653e-4d0b-8c73-78ba6812534b"
+	"01875ec6-7a38-408d-87ff-e9e55dbd8db6" [label="amount > 328.0 
+ [split attribute: amount]"]
+	"2e17bd3a-c971-4db7-a9c7-c3045c1ad8b6" -> "01875ec6-7a38-408d-87ff-e9e55dbd8db6"
+	"48737247-96a1-477e-bb3c-c75be7696ccc" [label="amount <= 716.0 
+ [Classes]: 
+ - skip_3: 0.7223 
+ - skip_4: 37.5596"]
+	"01875ec6-7a38-408d-87ff-e9e55dbd8db6" -> "48737247-96a1-477e-bb3c-c75be7696ccc"
+	"59681055-7a11-4ef6-b253-6548e828faa1" [label="amount > 716.0 
+ [Classes]: 
+ - skip_3: 8.7432 
+ - skip_4: 18.8345"]
+	"01875ec6-7a38-408d-87ff-e9e55dbd8db6" -> "59681055-7a11-4ef6-b253-6548e828faa1"
+	"22d1f55a-71eb-4f83-8261-e0587ea5bf18" [label="expense > 13.5 
+ [Classes]: 
+ - skip_3: 3969.7673 
+ - skip_4: 3261.7513"]
+	"bfbb5586-2ad1-4656-a328-f558e225c2c5" -> "22d1f55a-71eb-4f83-8261-e0587ea5bf18"
+}

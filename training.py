@@ -49,7 +49,8 @@ def train(training_data: dict, attributes_map: dict, net_name: str, n_sample: in
             # Fitting
             dt = DecisionTreeClassifier(attributes_map.copy(), min_instances=20)
             dt.fit(dataset)
-            dt.view(title=f"{net_name}-{decision_point}-{i+1}", view=False)
+            tree_title = f"{net_name}-{decision_point}-{i+1}"
+            dt.view(title=tree_title, view=False)
 
             # Predict
             y_pred = dt.predict(dataset.drop(columns=['target']))
@@ -65,9 +66,22 @@ def train(training_data: dict, attributes_map: dict, net_name: str, n_sample: in
                 f1_score = metrics.f1_score(dataset['target'], y_pred, pos_label=dataset['target'].unique()[0])
             f_scores.append(f1_score)
             # get rules
-            rules = dt.get_rules('standard')
+            rules = dt.get_rules('standard', print_rules=False)
+            # save rules
+            with open(f'./results/{net_name}-{decision_point}', 'a') as file:
+                file.write(f"-----Sample {i+1}-----")
+                file.write(f"\nTrain accuracy: {accuracy}")
+                file.write(f"F1 score: {f1_score}\n")
+            with open(f'./results/{tree_title}-rules', 'w') as file:
+                for rule in rules:
+                    file.write(f"-----{rule}-----: \n {rules[rule]}\n")
 #            for rule in rules:
 #                print(f"{rule}: \n {rules[rule]}")
-        print("Train accuracy: {}".format(sum(accuracies) / len(accuracies)))
-        print("F1 score: {}".format(sum(f_scores) / len(f_scores)))
-
+        accuracy_avg = sum(accuracies) / len(accuracies)
+        f1_score_avg = sum(f_scores) / len(f_scores)
+        print(f"Train accuracy: {accuracy_avg}")
+        print(f"F1 score: {f1_score_avg}")
+        with open(f'./results/{net_name}', 'a') as file:
+            file.write(f"-----{decision_point}-----\n")
+            file.write(f"Train accuracy: {accuracy_avg}\n")
+            file.write(f"F1 score: {f1_score_avg}\n")

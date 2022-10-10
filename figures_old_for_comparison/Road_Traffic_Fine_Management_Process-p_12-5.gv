@@ -1,0 +1,22 @@
+// Road_Traffic_Fine_Management_Process-p_12-5
+digraph "Road_Traffic_Fine_Management_Process-p_12-5" {
+	"189dfbb4-87bb-4da0-b021-f6c4b7aaf7fc" [label="root 
+ [split attribute: amount]"]
+	"3c0168af-a89d-43ec-9f29-f710a094f94a" [label="amount <= 39.0 
+ [Classes]: 
+ - skip_7: 259.0 
+ - skip_8: 5809.0"]
+	"189dfbb4-87bb-4da0-b021-f6c4b7aaf7fc" -> "3c0168af-a89d-43ec-9f29-f710a094f94a"
+	"1632dc92-235f-4992-9c0c-d127c7742a9c" [label="amount > 39.0 
+ [split attribute: totalPaymentAmount]"]
+	"189dfbb4-87bb-4da0-b021-f6c4b7aaf7fc" -> "1632dc92-235f-4992-9c0c-d127c7742a9c"
+	"fffb0737-94be-4249-aaaa-629cc3b98139" [label="totalPaymentAmount <= 0.0 
+ [Classes]: 
+ - skip_8: 585.0"]
+	"1632dc92-235f-4992-9c0c-d127c7742a9c" -> "fffb0737-94be-4249-aaaa-629cc3b98139"
+	"bfa792d8-9f65-4e92-a2ec-4b628c71234f" [label="totalPaymentAmount > 0.0 
+ [Classes]: 
+ - skip_7: 7627.0 
+ - skip_8: 1492.0"]
+	"1632dc92-235f-4992-9c0c-d127c7742a9c" -> "bfa792d8-9f65-4e92-a2ec-4b628c71234f"
+}

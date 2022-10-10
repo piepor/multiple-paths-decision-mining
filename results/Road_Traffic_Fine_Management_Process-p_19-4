@@ -1,0 +1,6 @@
+trans_I: 
+ totalPaymentAmount <= 51.6 && paymentAmount > 44.68
+skip_12: 
+ totalPaymentAmount > 51.6 && paymentAmount > 44.68 || paymentAmount <= 44.68
+
+Train accuracy: 0.8526785714285714F1 score: 0.8715953307392996
