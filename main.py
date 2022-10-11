@@ -1,5 +1,4 @@
 import argparse
-import pm4py
 from time import time
 from pm4py.objects.log.importer.xes import importer as xes_importer
 from importing import import_attributes, convert_attributes, import_petri_net
