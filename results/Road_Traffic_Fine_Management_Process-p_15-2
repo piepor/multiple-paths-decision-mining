@@ -1,6 +1,0 @@
-tauSplit_3: 
- totalPaymentAmount > 39.0 && totalPaymentAmount > 18.78 && totalPaymentAmount <= 42.0 || totalPaymentAmount <= 18.78 && totalPaymentAmount <= 42.0 || totalPaymentAmount > 37.6 && totalPaymentAmount <= 37.96 && totalPaymentAmount <= 38.0 && totalPaymentAmount <= 38.9 && totalPaymentAmount <= 39.0 && totalPaymentAmount > 18.78 && totalPaymentAmount <= 42.0 || totalPaymentAmount > 38.0 && totalPaymentAmount <= 38.9 && totalPaymentAmount <= 39.0 && totalPaymentAmount > 18.78 && totalPaymentAmount <= 42.0 || totalPaymentAmount > 42.0
-skip_11: 
- totalPaymentAmount > 38.9 && totalPaymentAmount <= 39.0 && totalPaymentAmount > 18.78 && totalPaymentAmount <= 42.0 || totalPaymentAmount <= 37.6 && totalPaymentAmount <= 37.96 && totalPaymentAmount <= 38.0 && totalPaymentAmount <= 38.9 && totalPaymentAmount <= 39.0 && totalPaymentAmount > 18.78 && totalPaymentAmount <= 42.0 || totalPaymentAmount > 37.96 && totalPaymentAmount <= 38.0 && totalPaymentAmount <= 38.9 && totalPaymentAmount <= 39.0 && totalPaymentAmount > 18.78 && totalPaymentAmount <= 42.0
-
-Train accuracy: 0.6592043681747269F1 score: 0.6421812063047703

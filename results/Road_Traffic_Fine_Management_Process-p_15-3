@@ -1,6 +1,0 @@
-skip_11: 
- totalPaymentAmount <= 39.0 && totalPaymentAmount > 13.71 && totalPaymentAmount <= 42.0
-tauSplit_3: 
- expense <= 6.46 && totalPaymentAmount > 39.0 && totalPaymentAmount > 13.71 && totalPaymentAmount <= 42.0 || expense > 6.46 && totalPaymentAmount > 39.0 && totalPaymentAmount > 13.71 && totalPaymentAmount <= 42.0 || totalPaymentAmount > 42.0 || totalPaymentAmount <= 13.71 && totalPaymentAmount <= 42.0
-
-Train accuracy: 0.6598142107502482F1 score: 0.6457596455602732

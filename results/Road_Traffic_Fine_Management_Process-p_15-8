@@ -1,6 +1,0 @@
-tauSplit_3: 
- totalPaymentAmount > 43.18 || totalPaymentAmount > 39.0 && totalPaymentAmount <= 43.18
-skip_11: 
- totalPaymentAmount <= 39.0 && totalPaymentAmount <= 43.18
-
-Train accuracy: 0.6582116011913204F1 score: 0.6430576229514267

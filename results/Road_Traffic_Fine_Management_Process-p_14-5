@@ -1,6 +1,0 @@
-skip_10: 
- totalPaymentAmount > 143.07 && paymentAmount > 85.75 && dismissal = # || totalPaymentAmount <= 143.07 && paymentAmount > 85.75 && dismissal = # || paymentAmount <= 85.75 && dismissal = #
-trans_H: 
- paymentAmount <= 85.75 && dismissal = NIL || totalPaymentAmount <= 143.07 && paymentAmount > 85.75 && dismissal = NIL || totalPaymentAmount > 143.07 && paymentAmount > 85.75 && dismissal = NIL
-
-Train accuracy: 0.498998998998999F1 score: 0.6617100371747212

@@ -1,6 +1,0 @@
-skip_4: 
- expense <= 15.16 && expense > 13.5 && expense > 11.88 && expense > 10.0 || expense > 13.0 && expense <= 13.5 && expense > 11.88 && expense > 10.0 || expense > 30.3 && expense > 15.16 && expense > 13.5 && expense > 11.88 && expense > 10.0 || expense <= 16.0 && expense <= 30.3 && expense > 15.16 && expense > 13.5 && expense > 11.88 && expense > 10.0 || expense <= 16.6 && expense > 16.0 && expense <= 30.3 && expense > 15.16 && expense > 13.5 && expense > 11.88 && expense > 10.0 || expense > 25.48 && expense > 16.6 && expense > 16.0 && expense <= 30.3 && expense > 15.16 && expense > 13.5 && expense > 11.88 && expense > 10.0 || expense <= 13.0 && expense <= 13.5 && expense > 11.88 && expense > 10.0 || expense <= 25.48 && expense > 16.6 && expense > 16.0 && expense <= 30.3 && expense > 15.16 && expense > 13.5 && expense > 11.88 && expense > 10.0 || expense <= 11.0 && expense <= 11.88 && expense > 10.0
-skip_3: 
- expense > 11.0 && expense <= 11.88 && expense > 10.0 || expense <= 10.0
-
-Train accuracy: 0.4312731403567822F1 score: 0.5916841612420896

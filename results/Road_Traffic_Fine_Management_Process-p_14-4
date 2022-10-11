@@ -1,6 +1,0 @@
-trans_H: 
- paymentAmount > 85.75
-skip_10: 
- paymentAmount <= 85.75
-
-Train accuracy: 0.8303303303303303F1 score: 0.8549422336328627

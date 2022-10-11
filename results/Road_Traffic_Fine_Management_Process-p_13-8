@@ -1,6 +1,0 @@
-skip_9: 
- paymentAmount <= 78.25 && totalPaymentAmount > 23.0 && expense > 11.0 || expense <= 10.0 && paymentAmount <= 78.25 && totalPaymentAmount > 23.0 && expense <= 11.0 || totalPaymentAmount > 85.37 && paymentAmount > 78.25 && totalPaymentAmount > 23.0 && expense > 11.0
-trans_G: 
- totalPaymentAmount > 85.37 && expense <= 10.0 && paymentAmount > 78.25 && totalPaymentAmount > 23.0 && expense <= 11.0 || totalPaymentAmount > 85.37 && expense > 10.0 && paymentAmount > 78.25 && totalPaymentAmount > 23.0 && expense <= 11.0 || totalPaymentAmount <= 85.37 && expense > 10.0 && paymentAmount > 78.25 && totalPaymentAmount > 23.0 && expense <= 11.0 || expense > 10.0 && paymentAmount <= 78.25 && totalPaymentAmount > 23.0 && expense <= 11.0 || totalPaymentAmount <= 23.0 && expense > 11.0 || expense <= 10.0 && totalPaymentAmount <= 23.0 && expense <= 11.0 || expense > 10.0 && totalPaymentAmount <= 23.0 && expense <= 11.0 || totalPaymentAmount <= 85.37 && paymentAmount > 78.25 && totalPaymentAmount > 23.0 && expense > 11.0 || totalPaymentAmount <= 85.37 && expense <= 10.0 && paymentAmount > 78.25 && totalPaymentAmount > 23.0 && expense <= 11.0
-
-Train accuracy: 0.38738738738738737F1 score: 0.0449438202247191

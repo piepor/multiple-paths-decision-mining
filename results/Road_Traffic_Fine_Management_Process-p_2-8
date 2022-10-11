@@ -1,6 +1,0 @@
-skip_2: 
- totalPaymentAmount > 24.0 && totalPaymentAmount > 0.0 || totalPaymentAmount <= 24.0 && totalPaymentAmount > 0.0
-tauSplit_1: 
- totalPaymentAmount <= 0.0
-
-Train accuracy: 0.8991440829614298F1 score: 0.9083840896182998

@@ -1,6 +1,0 @@
-tauSplit_1: 
- totalPaymentAmount <= 0.0
-skip_2: 
- totalPaymentAmount > 0.0
-
-Train accuracy: 0.9009227518702974F1 score: 0.9098541542022617
