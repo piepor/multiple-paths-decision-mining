@@ -22,7 +22,6 @@ def main():
     # Converting attributes types according to the attributes_map file
     log = convert_attributes(attributes_map, log)
 
-    #breakpoint()
     # import model
     petri_net, init_mark, final_mark = import_petri_net(net_name)
 
