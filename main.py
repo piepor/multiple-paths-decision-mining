@@ -36,8 +36,8 @@ def main():
     # Scanning the log to get the logs related to decision points
     print('Extracting training logs from Event Log...')
     algorithm = MultiplePaths(petri_net, activities_to_trans_map)
-    #training_data = algorithm.extract_decision_points_data(log)
-    training_data = algorithm.old_extract_decision_points_data_only_last_event(log)
+    training_data = algorithm.old_extract_decision_points_data(log)
+    #training_data = algorithm.old_extract_decision_points_data_only_last_event(log)
     # Data has been gathered. For each decision point, fitting a decision tree on its logs and extracting the rules
     train(training_data, attributes_map, net_name)
     toc = time()
