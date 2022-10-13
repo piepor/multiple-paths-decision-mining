@@ -1,8 +1,10 @@
 import os
 import json
+import pickle
 from pm4py.objects.log.obj import EventLog
 from pm4py.objects.petri_net.obj import PetriNet, Marking
 from pm4py.objects.petri_net.importer import importer as pnml_importer
+from c4dot5.DecisionTree import DecisionTree
 
     
 def import_attributes(net_name: str) -> dict:
@@ -33,3 +35,9 @@ def import_petri_net(net_name: str) -> tuple[PetriNet, Marking, Marking]:
     except:
         raise FileNotFoundError("Model not found in ./models")
     return net, im, fm
+
+def import_decision_tree(tree_name: str) -> DecisionTree:
+    with open(f"decision-trees/{tree_name}.dt", 'rb') as file:
+        decision_tree = pickle.load(file)
+    return decision_tree
+

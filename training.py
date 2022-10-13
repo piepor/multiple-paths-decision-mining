@@ -2,6 +2,7 @@ import pandas as pd
 from tqdm import tqdm
 from sklearn import metrics
 from c4dot5.DecisionTreeClassifier import DecisionTreeClassifier
+from c4dot5.importing import import_classifier
 
 
 
@@ -28,7 +29,7 @@ def sampling_dataset(dataset: pd.DataFrame) -> pd.DataFrame:
 
     return dataset
 
-def train(training_data: dict, attributes_map: dict, net_name: str, n_sample: int=10):
+def train(training_data: dict, attributes_map: dict, net_name: str, n_sample: int=10, models_dir: str):
     #file_name = 'test.txt'
     for decision_point in training_data.keys():
         #if decision_point == 'p_3':
@@ -50,8 +51,7 @@ def train(training_data: dict, attributes_map: dict, net_name: str, n_sample: in
             dt = DecisionTreeClassifier(attributes_map.copy(), min_instances=20)
             dt.fit(dataset)
             tree_title = f"{net_name}-{decision_point}-{i+1}"
-            dt.view(title=tree_title, view=False)
-
+            #dt.view(title=tree_title, view=False)
             # Predict
             y_pred = dt.predict(dataset.drop(columns=['target']))
 
@@ -77,6 +77,7 @@ def train(training_data: dict, attributes_map: dict, net_name: str, n_sample: in
                     file.write(f"-----{rule}-----: \n {rules[rule]}\n")
 #            for rule in rules:
 #                print(f"{rule}: \n {rules[rule]}")
+            dt.save(f"{models_dir}/classifiers/{tree_title}.classifier")
         accuracy_avg = sum(accuracies) / len(accuracies)
         f1_score_avg = sum(f_scores) / len(f_scores)
         print(f"Train accuracy: {accuracy_avg}")
