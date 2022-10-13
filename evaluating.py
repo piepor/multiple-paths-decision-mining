@@ -1,3 +1,4 @@
+import os
 from itertools import count
 import numpy as np
 import pm4py
@@ -6,6 +7,7 @@ from pm4py.objects.log.obj import EventLog, Trace
 from pm4py.objects.petri_net.data_petri_nets.data_marking import DataMarking
 from pm4py.algo.conformance.alignments.petri_net import algorithm as pn_align
 from pm4py.objects.petri_net.importer import importer as pnml_importer
+from c4dot5.importing import import_classifier
 
 def evaluate_data_petri_net(petri_net: PetriNet, event_log: EventLog, decision_points: dict, initial_marking: Marking, final_marking: Marking):
     # returns also the name of the transitions
@@ -64,7 +66,30 @@ def get_dps(petri_net: PetriNet):
                 dps[trans].append(place.name)
     return dps
 
+def validation(net_name: str, models_dir: str, data_path: str):
+    log = pm4py.read_xes(data_path)
+    net, im, fm = pnml_importer.apply(f'{models_dir}/petri_nets/{net_name}.pnml')
+    decision_points_clfs = load_classifiers(net, models_dir)
+    res = evaluate_data_petri_net(net, log, decision_points_clfs, im, fm)
+    return res
 
-log = pm4py.read_xes('logs/log-Road_Traffic_Fine_Management_Process.xes')
-net, im, fm = pnml_importer.apply('models/Road_Traffic_Fine_Management_Process.pnml')
-evaluate_data_petri_net(net, log, {}, im, fm)
+def load_classifiers(net: PetriNet, models_dir:str) -> dict:
+    decision_points_classifiers = {}
+    for place in net.places:
+        if len(place.out_arcs) > 1:
+            for classifier_name in os.listdir(f"{models_dir}/classifiers"):
+                if place.name in classifier_name: 
+                    if not place.name in decision_points_classifiers:
+                        decision_points_classifiers[place.name] = import_classifier(f"{models_dir}/classifiers/{classifier_name}")
+                else:
+                        decision_points_classifiers[place.name] = []
+    return decision_points_classifiers
+
+# log = pm4py.read_xes('logs/log-Road_Traffic_Fine_Management_Process.xes')
+# net, im, fm = pnml_importer.apply('models/Road_Traffic_Fine_Management_Process.pnml')
+# evaluate_data_petri_net(net, log, {}, im, fm)
+net_name = 'Road_Traffic_Fine_Management_Process'
+models_dir = './models'
+data_path = f'./logs/log-{net_name}.xes'
+res = validation(net_name, models_dir, data_path)
+print(f"Total likelihood: {res}")
