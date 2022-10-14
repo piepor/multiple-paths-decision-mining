@@ -29,7 +29,7 @@ def sampling_dataset(dataset: pd.DataFrame) -> pd.DataFrame:
 
     return dataset
 
-def train(training_data: dict, attributes_map: dict, net_name: str, n_sample: int=10, models_dir: str):
+def train(training_data: dict, attributes_map: dict, net_name: str, models_dir: str, n_sample: int=10):
     #file_name = 'test.txt'
     for decision_point in training_data.keys():
         #if decision_point == 'p_3':

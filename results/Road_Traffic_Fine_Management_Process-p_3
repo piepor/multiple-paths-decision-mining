@@ -18,3 +18,23 @@ Train accuracy: 0.8383540895321441F1 score: 0.8587292248860126
 Train accuracy: 0.8395531807472232F1 score: 0.8596300726971565
 -----Sample 10-----
 Train accuracy: 0.7437521036687984F1 score: 0.7652488966833048
+-----Sample 1-----
+Train accuracy: 0.8291189835072367F1 score: 0.8306049673638772
+-----Sample 2-----
+Train accuracy: 0.8399739145069001F1 score: 0.8599466077510816
+-----Sample 3-----
+Train accuracy: 0.8160762369572534F1 score: 0.8201953727506427
+-----Sample 4-----
+Train accuracy: 0.7212849209020532F1 score: 0.7410635761330545
+-----Sample 5-----
+Train accuracy: 0.8394900706832716F1 score: 0.8595826125363466
+-----Sample 6-----
+Train accuracy: 0.815466173005722F1 score: 0.8195729976551894
+-----Sample 7-----
+Train accuracy: 0.8262790306294177F1 score: 0.8278148457047539
+-----Sample 8-----
+Train accuracy: 0.8245329855267587F1 score: 0.8265507704464639
+-----Sample 9-----
+Train accuracy: 0.7877398182430159F1 score: 0.7980060858424086
+-----Sample 10-----
+Train accuracy: 0.8390483002356109F1 score: 0.8592505380893688
