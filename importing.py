@@ -31,7 +31,7 @@ def convert_attributes(attributes_map: dict, event_log: EventLog) -> EventLog:
 
 def import_petri_net(net_name: str) -> tuple[PetriNet, Marking, Marking]:
     try:
-        net, im, fm = pnml_importer.apply("models/{}.pnml".format(net_name))
+        net, im, fm = pnml_importer.apply("models/petri_nets/{}.pnml".format(net_name))
     except:
         raise FileNotFoundError("Model not found in ./models")
     return net, im, fm

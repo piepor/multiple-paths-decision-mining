@@ -1,6 +1,7 @@
 import os
 from itertools import count
 import numpy as np
+import pandas as pd
 import pm4py
 from pm4py.objects.petri_net.obj import PetriNet, Marking
 from pm4py.objects.log.obj import EventLog, Trace
@@ -12,35 +13,46 @@ from c4dot5.importing import import_classifier
 def evaluate_data_petri_net(petri_net: PetriNet, event_log: EventLog, decision_points: dict, initial_marking: Marking, final_marking: Marking):
     # returns also the name of the transitions
     dps_map = get_dps(petri_net)
+    possible_attributes = get_possible_attributes(event_log)
     parameters = {pn_align.Parameters.PARAM_ALIGNMENT_RESULT_IS_SYNC_PROD_AWARE: True}
     aligned_traces = pn_align.apply_log(event_log, petri_net, initial_marking, final_marking, parameters=parameters)
     metrics = []
     for i, alignment in enumerate(aligned_traces):
         trace = event_log[i]
-        metrics.append(evaluate_trace(alignment, trace, decision_points, dps_map))
+        metrics.append(evaluate_trace(alignment, trace, decision_points, dps_map, possible_attributes))
     return sum(metrics) / len(event_log)
 
-def evaluate_trace(alignment: dict, trace: Trace, decision_points: dict, dps_map: dict) -> float:
-    breakpoint()
+def evaluate_trace(alignment: dict, trace: Trace, decision_points: dict, dps_map: dict, possible_attributes: set) -> float:
     transitions = []
     prob_sequence = []
     for align in alignment['alignment']:
         trans = align[0][1]
         # TODO add the case of a transitions pointed by two dps
         if trans in dps_map:
-            attributes = get_attributes(transitions, trace)
+            attributes = get_attributes(transitions, trace, possible_attributes)
+            breakpoint()
             dp = dps_map[trans][0]
-            #classifier = decision_points[dp]
-            #trans_prob = classifier.predict_prob(trans, attributes)
-            prob_sequence.append(np.log(0.5))
+            classifier = decision_points[dp]
+            _, pred_distribution = classifier.predict(attributes, distribution=True)
+            target_prob = pred_distribution[0][trans]
+            prob_sequence.append(np.log(target_prob))
         transitions.append(align[1][1])
     breakpoint()
     return np.exp(sum(prob_sequence))
 
-def get_attributes(trans: list, trace: Trace):
+def get_possible_attributes(event_log: EventLog):
+    attrs = set()
+    for trace in event_log:
+        for event in trace:
+            for attribute in event:
+                if not attribute in attrs:
+                    attrs.add(attribute)
+    return attrs
+
+def get_attributes(trans: list, trace: Trace, possible_attributes: set):
     if not trans:
         return []
-    attributes = {}
+    attributes = {key: [None] for key in possible_attributes}
     visible_trans = [transition for transition in trans if not transition is None]
     last_trans = visible_trans[-1]
     count_trans = trans.count(last_trans)
@@ -52,8 +64,8 @@ def get_attributes(trans: list, trace: Trace):
     for i in range(index_trans+1):
         event = trace[i]
         for event_attr in event.keys():
-            attributes[event_attr] = event[event_attr]
-    return attributes
+            attributes[event_attr] = [event[event_attr]]
+    return pd.DataFrame.from_dict(attributes)
         
 def get_dps(petri_net: PetriNet):
     dps = {}
@@ -76,13 +88,16 @@ def validation(net_name: str, models_dir: str, data_path: str):
 def load_classifiers(net: PetriNet, models_dir:str) -> dict:
     decision_points_classifiers = {}
     for place in net.places:
+        file_name = None
         if len(place.out_arcs) > 1:
             for classifier_name in os.listdir(f"{models_dir}/classifiers"):
-                if place.name in classifier_name: 
-                    if not place.name in decision_points_classifiers:
-                        decision_points_classifiers[place.name] = import_classifier(f"{models_dir}/classifiers/{classifier_name}")
-                else:
-                        decision_points_classifiers[place.name] = []
+                if place.name in classifier_name:
+                    file_name = classifier_name
+                    break
+            if not file_name is None: 
+                decision_points_classifiers[place.name] = import_classifier(f"{models_dir}/classifiers/{file_name}")
+            else:
+                decision_points_classifiers[place.name] = []
     return decision_points_classifiers
 
 # log = pm4py.read_xes('logs/log-Road_Traffic_Fine_Management_Process.xes')
@@ -92,4 +107,5 @@ net_name = 'Road_Traffic_Fine_Management_Process'
 models_dir = './models'
 data_path = f'./logs/log-{net_name}.xes'
 res = validation(net_name, models_dir, data_path)
+breakpoint()
 print(f"Total likelihood: {res}")

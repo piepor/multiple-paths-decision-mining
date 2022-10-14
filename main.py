@@ -39,7 +39,7 @@ def main():
     training_data = algorithm.old_extract_decision_points_data(log)
     #training_data = algorithm.old_extract_decision_points_data_only_last_event(log)
     # Data has been gathered. For each decision point, fitting a decision tree on its logs and extracting the rules
-    train(training_data, attributes_map, net_name)
+    train(training_data, attributes_map, net_name, './models')
     toc = time()
     print("\nTotal time: {}".format(toc-tic))
 
