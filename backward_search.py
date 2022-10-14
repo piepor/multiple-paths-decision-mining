@@ -11,10 +11,12 @@ def get_decision_points_and_targets(sequence, net, stored_dicts) -> [dict, dict]
 
     # Backward decision points search towards the previous reachable activity
     dp_dict = dict()
+    counter = 0
     for previous_act in reversed(sequence[:-1]):
         prev_curr_key = ', '.join([previous_act, current_act.name])
         if prev_curr_key not in stored_dicts.keys():
-            dp_dict, event_found = _backward_depth_first_search(previous_act, current_act)
+            counter += 1
+            dp_dict, event_found, counter = _backward_depth_first_search(previous_act, current_act, counter)
             if event_found:
                 # ------------------------------ DEBUGGING ------------------------------
                 # from utils import get_map_events_transitions
@@ -36,10 +38,10 @@ def get_decision_points_and_targets(sequence, net, stored_dicts) -> [dict, dict]
             dp_dict = stored_dicts[prev_curr_key]
             break
 
-    return dp_dict, stored_dicts
+    return dp_dict, stored_dicts, counter
 
 
-def _backward_depth_first_search(previous, current, decision_points=None, passed_inn_arcs=None) -> [dict, bool]:
+def _backward_depth_first_search(previous, current, counter, decision_points=None, passed_inn_arcs=None) -> [dict, bool]:
     """ Extracts all the decision points that are traversed between two activities (previous and current), reporting the
     decision(s) that has been taken for each of them.
 
@@ -69,9 +71,11 @@ def _backward_depth_first_search(previous, current, decision_points=None, passed
         passed_inn_arcs = set()
     target_found = False
     for in_arc in current.in_arcs:
+        counter += 1
         # Preparing the lists containing inner_arcs towards invisible and non-invisible transitions
         inner_inv_acts, inner_in_arcs_names = set(), set()
         for inner_in_arc in in_arc.source.in_arcs:
+            counter += 1
             if inner_in_arc.source.label is None:
                 inner_inv_acts.add(inner_in_arc)
             else:
@@ -85,13 +89,13 @@ def _backward_depth_first_search(previous, current, decision_points=None, passed
         for inner_in_arc in inner_inv_acts:
             if inner_in_arc not in passed_inn_arcs:
                 passed_inn_arcs.add(inner_in_arc)
-                decision_points, previous_found = _backward_depth_first_search(previous, inner_in_arc.source,
+                decision_points, previous_found, counter = _backward_depth_first_search(previous, inner_in_arc.source, counter,
                                                                                decision_points, passed_inn_arcs)
                 passed_inn_arcs.remove(inner_in_arc)
                 decision_points = _add_dp_target(decision_points, in_arc.source, current.name, previous_found)
                 target_found = target_found or previous_found
 
-    return decision_points, target_found
+    return decision_points, target_found, counter
 
 
 def _add_dp_target(decision_points, dp, target, add_dp) -> dict:
@@ -127,6 +131,7 @@ def get_all_dp_from_sink_to_last_event(transition, sink, decision_points_seen) -
             dp_seen.add(dp_key)
 
     sink_in_acts = [in_arc.source for in_arc in sink.in_arcs]
+    counter = len(sink_in_acts)
     if transition in sink_in_acts:
         return dict()
     else:
@@ -134,28 +139,31 @@ def get_all_dp_from_sink_to_last_event(transition, sink, decision_points_seen) -
 
         for sink_in_act in sink_in_acts:
             if sink_in_act.label is None:
-                decision_points = _backward_depth_first_search_from_sink(transition, sink_in_act, dp_seen,
+                counter += 1
+                decision_points, counter = _backward_depth_first_search_from_sink(transition, sink_in_act, dp_seen, counter,
                                                                          decision_points)
 
-        return decision_points
+        return decision_points, counter
 
 
-def _backward_depth_first_search_from_sink(previous, current, dp_seen, decision_points=None, passed_inn_arcs=None) -> dict:
+def _backward_depth_first_search_from_sink(previous, current, dp_seen, counter, decision_points=None, passed_inn_arcs=None) -> dict:
     if decision_points is None:
         decision_points = dict()
     if passed_inn_arcs is None:
         passed_inn_arcs = set()
     for in_arc in current.in_arcs:
+        counter += 1
         # If decision point already seen in variant, stop following this path
         if in_arc.source.name in dp_seen:
             continue
 
         for inner_in_arc in in_arc.source.in_arcs:
+            counter += 1
             # If invisible activity backward, recurse only if 'inner_in_arc' has not been seen in this path yet
             if inner_in_arc.source.label is None:
                 if inner_in_arc not in passed_inn_arcs:
                     passed_inn_arcs.add(inner_in_arc)
-                    decision_points = _backward_depth_first_search_from_sink(previous, inner_in_arc.source, dp_seen,
+                    decision_points, counter = _backward_depth_first_search_from_sink(previous, inner_in_arc.source, dp_seen, counter,
                                                                              decision_points, passed_inn_arcs)
                     decision_points = _add_dp_target(decision_points, in_arc.source, current.name, True)
                     passed_inn_arcs.remove(inner_in_arc)
@@ -165,4 +173,4 @@ def _backward_depth_first_search_from_sink(previous, current, dp_seen, decision_
             else:
                 decision_points = _add_dp_target(decision_points, in_arc.source, current.name, True)
 
-    return decision_points
+    return decision_points, counter

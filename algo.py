@@ -50,22 +50,28 @@ class MultiplePaths:
         decision_points_data, event_attr, stored_dicts = dict(), dict(), dict()
         variants = variants_filter.get_variants(log)
 # Decision points of interest are searched considering the variants only
+        complexity = {'sequence_length': [], 'operations_number': []}
         for variant in tqdm(variants):
             transitions_sequence, events_sequence = list(), list()
             dp_events_sequence = dict()
+            counters = []
             for i, event_name in enumerate(variant.split(',')):
                 #trans_from_event = events_to_trans_map[event_name]
                 trans_from_event = self.activities_to_trans_map[event_name]
                 transitions_sequence.append(trans_from_event)
                 events_sequence.append(event_name)
                 if len(transitions_sequence) > 1:
-                    dp_dict, stored_dicts = get_decision_points_and_targets(transitions_sequence, self.petri_net, stored_dicts)
+                    dp_dict, stored_dicts, counter = get_decision_points_and_targets(transitions_sequence, self.petri_net, stored_dicts)
                     dp_events_sequence['Event_{}'.format(i+1)] = dp_dict
+                    counters.append(counter)
 
             # Final update of the current trace (from last event to sink)
             transition = [trans for trans in self.petri_net.transitions if trans.label == event_name][0]
             #dp_events_sequence['End'] = get_all_dp_from_sink_to_last_event(transition, sink_complete_net, dp_events_sequence)
-            dp_events_sequence['End'] = get_all_dp_from_sink_to_last_event(transition, self.sink, dp_events_sequence)
+            dp_events_sequence['End'], counter = get_all_dp_from_sink_to_last_event(transition, self.sink, dp_events_sequence)
+            counters.append(counter)
+            complexity['sequence_length'].append(len(variant.split(',')))
+            complexity['operations_number'].append(sum(counters))
 
             for trace in variants[variant]:
                 # Storing the trace attributes (if any)
@@ -118,7 +124,7 @@ class MultiplePaths:
                                 elif a in decision_points_data[dp]:
                                     decision_points_data[dp][a].append(event_attr[a])
                             decision_points_data[dp]['target'].append(dp_target)
-        return decision_points_data
+        return decision_points_data, complexity
 
     def old_extract_decision_points_data_only_last_event(self, log):
 
