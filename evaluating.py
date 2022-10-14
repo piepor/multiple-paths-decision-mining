@@ -30,14 +30,14 @@ def evaluate_trace(alignment: dict, trace: Trace, decision_points: dict, dps_map
         # TODO add the case of a transitions pointed by two dps
         if trans in dps_map:
             attributes = get_attributes(transitions, trace, possible_attributes)
-            breakpoint()
             dp = dps_map[trans][0]
             classifier = decision_points[dp]
             _, pred_distribution = classifier.predict(attributes, distribution=True)
+            if trans not in pred_distribution[0]:
+                breakpoint()
             target_prob = pred_distribution[0][trans]
             prob_sequence.append(np.log(target_prob))
         transitions.append(align[1][1])
-    breakpoint()
     return np.exp(sum(prob_sequence))
 
 def get_possible_attributes(event_log: EventLog):
@@ -91,7 +91,7 @@ def load_classifiers(net: PetriNet, models_dir:str) -> dict:
         file_name = None
         if len(place.out_arcs) > 1:
             for classifier_name in os.listdir(f"{models_dir}/classifiers"):
-                if place.name in classifier_name:
+                if place.name == classifier_name.split('-')[1]:
                     file_name = classifier_name
                     break
             if not file_name is None: 
