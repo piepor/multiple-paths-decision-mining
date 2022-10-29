@@ -1,6 +1,6 @@
 # logs too big
-logs/log-Road_Traffic_Fine_Management_Process.xes
-logs/Road_Traffic_Fine_Management_Process.xes
+#logs/log-Road_Traffic_Fine_Management_Process.xes
+logs/*Road_Traffic_Fine_Management_Process*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
