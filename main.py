@@ -1,4 +1,5 @@
 import argparse
+import pandas as pd
 from time import time
 from pm4py.objects.log.importer.xes import importer as xes_importer
 from importing import import_attributes, convert_attributes, import_petri_net
@@ -37,6 +38,16 @@ def main():
     print('Extracting training logs from Event Log...')
     algorithm = MultiplePaths(petri_net, activities_to_trans_map)
     training_data, complexity = algorithm.old_extract_decision_points_data(log)
+    complexity_raw = pd.DataFrame.from_dict(complexity)
+    complexity_grouped = complexity_raw.groupby('sequence_length')
+    complexity = complexity_grouped.mean().rename(columns={'operations_number': 'operations_number_mean',
+                                                           'timers': 'timers_mean'})
+    complexity['operations_number_std'] = complexity_grouped['operations_number'].std()
+    complexity['timers_std'] = complexity_grouped['timers'].std()
+    petri_net_size = len(petri_net.arcs) + len(petri_net.places) + len(petri_net.transitions)
+    complexity['worst_case'] = complexity.index*complexity.index*(petri_net_size)
+    complexity =  complexity.fillna(0)
+    complexity.to_csv(f'./results/complexity-{net_name}.csv')
     breakpoint()
     #training_data = algorithm.old_extract_decision_points_data_only_last_event(log)
     # Data has been gathered. For each decision point, fitting a decision tree on its logs and extracting the rules

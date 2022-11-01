@@ -1,4 +1,5 @@
 from tqdm import tqdm
+import time
 from pm4py.algo.filtering.log.variants import variants_filter
 from pm4py.objects.log.obj import EventLog
 from pm4py.objects.petri_net.obj import PetriNet
@@ -50,8 +51,9 @@ class MultiplePaths:
         decision_points_data, event_attr, stored_dicts = dict(), dict(), dict()
         variants = variants_filter.get_variants(log)
 # Decision points of interest are searched considering the variants only
-        complexity = {'sequence_length': [], 'operations_number': []}
+        complexity = {'sequence_length': [], 'operations_number': [], 'timers': []}
         for variant in tqdm(variants):
+            start = time.time()
             transitions_sequence, events_sequence = list(), list()
             dp_events_sequence = dict()
             counters = []
@@ -69,9 +71,12 @@ class MultiplePaths:
             transition = [trans for trans in self.petri_net.transitions if trans.label == event_name][0]
             #dp_events_sequence['End'] = get_all_dp_from_sink_to_last_event(transition, sink_complete_net, dp_events_sequence)
             dp_events_sequence['End'], counter = get_all_dp_from_sink_to_last_event(transition, self.sink, dp_events_sequence)
+            end = time.time()
+            duration_time = end - start
             counters.append(counter)
             complexity['sequence_length'].append(len(variant.split(',')))
             complexity['operations_number'].append(sum(counters))
+            complexity['timers'].append(duration_time)
 
             for trace in variants[variant]:
                 # Storing the trace attributes (if any)

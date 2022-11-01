@@ -71,10 +71,12 @@ def _backward_depth_first_search(previous, current, counter, decision_points=Non
         passed_inn_arcs = set()
     target_found = False
     for in_arc in current.in_arcs:
-        counter += 1
+        # add 2 because 1 arc + 1 node
+        counter += 2
         # Preparing the lists containing inner_arcs towards invisible and non-invisible transitions
         inner_inv_acts, inner_in_arcs_names = set(), set()
         for inner_in_arc in in_arc.source.in_arcs:
+            # 1 for the arc
             counter += 1
             if inner_in_arc.source.label is None:
                 inner_inv_acts.add(inner_in_arc)
@@ -88,6 +90,8 @@ def _backward_depth_first_search(previous, current, counter, decision_points=Non
         # Recursive case: follow every invisible activity backward
         for inner_in_arc in inner_inv_acts:
             if inner_in_arc not in passed_inn_arcs:
+                # add one for the node
+                counter += 1
                 passed_inn_arcs.add(inner_in_arc)
                 decision_points, previous_found, counter = _backward_depth_first_search(previous, inner_in_arc.source, counter,
                                                                                decision_points, passed_inn_arcs)
@@ -152,13 +156,15 @@ def _backward_depth_first_search_from_sink(previous, current, dp_seen, counter, 
     if passed_inn_arcs is None:
         passed_inn_arcs = set()
     for in_arc in current.in_arcs:
-        counter += 1
+        # add 2 because 1 arc + 1 node
+        counter += 2
         # If decision point already seen in variant, stop following this path
         if in_arc.source.name in dp_seen:
             continue
 
         for inner_in_arc in in_arc.source.in_arcs:
-            counter += 1
+            # add 2 because 1 arc + 1 node
+            counter += 2
             # If invisible activity backward, recurse only if 'inner_in_arc' has not been seen in this path yet
             if inner_in_arc.source.label is None:
                 if inner_in_arc not in passed_inn_arcs:
